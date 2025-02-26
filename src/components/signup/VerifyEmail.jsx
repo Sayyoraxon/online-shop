@@ -5,6 +5,7 @@ import back from "../../assets/icons/back.svg"
 import { useDispatch, useSelector } from 'react-redux'
 import { registerUserFailure, signUserStart, registerUserSuccess } from '../../slice/auth'
 import AuthService from '../../service/Auth'
+import { loggedIn } from '../../helpers/storage'
 
 const VerifyEmail = ({ email, setStep }) => {
 
@@ -23,6 +24,7 @@ const VerifyEmail = ({ email, setStep }) => {
     try {
       const res = await AuthService.confirmCode({ "code": code })
       dispatch(registerUserSuccess(res))
+      loggedIn(true)
       setStep(3)
     } catch (err) {
       dispatch(registerUserFailure(err.response.data.message))

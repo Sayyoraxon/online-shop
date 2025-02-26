@@ -6,7 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import AuthService from '../../service/Auth'
 import { registerUserFailure, signUserStart, registerUserSuccess } from '../../slice/auth'
 import { useDispatch, useSelector } from 'react-redux'
-import { setItem } from '../../helpers/storage'
+import { token } from '../../helpers/storage'
 
 const CreateAccount = ({ setStep, setEmail }) => {
 
@@ -42,7 +42,7 @@ const CreateAccount = ({ setStep, setEmail }) => {
       })
       console.log(res.detail)
       dispatch(registerUserSuccess(res.detail))
-      setItem(res.detail.access_token, true)
+      token(res.detail.access_token)
   
       setStep(2)
     } catch (err) {
