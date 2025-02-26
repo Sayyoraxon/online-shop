@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router'
 
 const Register = () => {
 
-  const [step, setStep] = useState(5)
+  const [step, setStep] = useState(1)
   const [email, setEmail] = useState("")
 
   const navigate = useNavigate()
