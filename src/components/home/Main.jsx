@@ -5,12 +5,17 @@ import sales from "../../assets/icons/sales.svg"
 import orders from "../../assets/icons/product.svg"
 import product1 from "../../assets/icons/product 1.svg"
 import plus from "../../assets/icons/add.svg"
+import useStore from '../../store/useStore'
 
 const Main = () => {
+
+    const {language} = useStore()
+
+
     return (
         <div className='w-full pt-[38px] pl-[23px] pr-[45px]'>
             <p className='font-medium text-[24px] leading-[29px]'>
-                Dashboard
+                {language.Dashboard}
             </p>
             <div className='mt-[51px] w-full flex gap-6'>
                 <div>
@@ -21,7 +26,7 @@ const Main = () => {
                                     240
                                 </p>
                                 <p className='font-medium text-[14px] leading-4 text-[#007bff]'>
-                                    Total Products
+                                    {language.TotalProducts}
                                 </p>
                             </div>
                             <img src={box} alt="box" />
@@ -32,7 +37,7 @@ const Main = () => {
                                     1200
                                 </p>
                                 <p className='font-medium text-[14px] leading-4 text-[#007bff]'>
-                                    Total Sales
+                                    {language.TotalSales}
                                 </p>
                             </div>
                             <img src={sales} alt="box" />
@@ -43,7 +48,7 @@ const Main = () => {
                                     240
                                 </p>
                                 <p className='font-medium text-[14px] leading-4 text-[#007bff]'>
-                                    Pending Orders
+                                    {language.PendingOrders}
                                 </p>
                             </div>
                             <img src={orders} alt="box" />
@@ -54,7 +59,7 @@ const Main = () => {
                                     240
                                 </p>
                                 <p className='font-medium text-[14px] leading-4 text-[#007bff]'>
-                                    On Proccess to delivery
+                                    {language.OnProccessToDelivery}
                                 </p>
                             </div>
                             <img src={truck} alt="box" />
@@ -64,19 +69,19 @@ const Main = () => {
                     <div className='flex gap-6 flex-wrap'>
                         <div className='w-[300px] h-[163px] p-5 rounded-[9px] shadow-md shadow-gray-400 grow bg-[#ffeac9]'>
                             <p className='font-medium text-[20px] leading-[24px]'>
-                                Add new Product
+                               {language.AddNewProduct}
                             </p>
                             <p className='mt-2.5 text-[14px] leading-[17px]'>
-                                indroduce your new product to the market
+                                {language.Introduce}
                             </p>
                             <img className='mt-8 ml-auto' src={product1} alt="product" width={40} height={40} />
                         </div>
                         <div className='w-[300px] h-[163px] p-5 rounded-[9px] shadow-md shadow-gray-400 grow bg-[#ffeac9]'>
                             <p className='font-medium text-[20px] leading-[24px]'>
-                                Add new Product
+                                {language.IncreaseItems}
                             </p>
                             <p className='mt-2.5 text-[14px] leading-[17px]'>
-                                indroduce your new product to the market
+                                {language.IncreaseTheProduct}
                             </p>
                             <img className='mt-8 ml-auto' src={plus} alt="product" width={40} height={40} />
                         </div>
@@ -84,7 +89,7 @@ const Main = () => {
                 </div>
                 <div className='min-w-[440px] h-[440px] p-5 rounded-[9px] shadow-md shadow-gray-400'>
                     <p className='font-medium text-[20px] leading-6 '>
-                        Stock Summery
+                        {language.StockSummary}
                     </p>
                     <div className='flex w-full justify-between'>
                         <div>
@@ -93,7 +98,7 @@ const Main = () => {
 
                                 </div>
                                 <p>
-                                    Added Stock
+                                    {language.AddedStock}
                                 </p>
                             </div>
                             <div className='mt-2.5 flex gap-2.5 items-center'>
@@ -101,7 +106,7 @@ const Main = () => {
 
                                 </div>
                                 <p>
-                                    Available Stock
+                                    {language.AvailableStock}
                                 </p>
                             </div>
                         </div>
@@ -113,12 +118,12 @@ const Main = () => {
                     </div>
                     <div>
                         <p className='font-semibold text-[12px] leading-[14px]'>
-                            Low stock Products
+                            {language.LowStockProducts}
                         </p>
                         <div className='mt-[15px] w-full h-[131px] overflow-scroll'>
                             <div className='w-full h-[25px] flex justify-between items-center border-b border-[#848484]'>
                                 <p className='text-[12px] leading-[14px]'>
-                                    Product name
+                                    {language.ProductName}
                                 </p>
                                 <p className='text-[12px] leading-[14px] text-[#dd3a3a]'>
                                     Remaining 10%
@@ -126,7 +131,7 @@ const Main = () => {
                             </div>
                             <div className='w-full h-[25px] flex justify-between items-center border-b border-[#848484]'>
                                 <p className='text-[12px] leading-[14px]'>
-                                    Product name
+                                    {language.ProductName}
                                 </p>
                                 <p className='text-[12px] leading-[14px] text-[#dd3a3a]'>
                                     Remaining 10%
@@ -134,7 +139,7 @@ const Main = () => {
                             </div>
                             <div className='w-full h-[25px] flex justify-between items-center border-b border-[#848484]'>
                                 <p className='text-[12px] leading-[14px]'>
-                                    Product name
+                                    {language.ProductName}
                                 </p>
                                 <p className='text-[12px] leading-[14px] text-[#dd3a3a]'>
                                     Remaining 10%
@@ -142,7 +147,7 @@ const Main = () => {
                             </div>
                             <div className='w-full h-[25px] flex justify-between items-center border-b border-[#848484]'>
                                 <p className='text-[12px] leading-[14px]'>
-                                    Product name
+                                    {language.ProductName}
                                 </p>
                                 <p className='text-[12px] leading-[14px] text-[#dd3a3a]'>
                                     Remaining 10%
@@ -150,7 +155,7 @@ const Main = () => {
                             </div>
                             <div className='w-full h-[25px] flex justify-between items-center border-b border-[#848484]'>
                                 <p className='text-[12px] leading-[14px]'>
-                                    Product name
+                                    {language.ProductName}
                                 </p>
                                 <p className='text-[12px] leading-[14px] text-[#dd3a3a]'>
                                     Remaining 10%
@@ -158,7 +163,7 @@ const Main = () => {
                             </div>
                             <div className='w-full h-[25px] flex justify-between items-center border-b border-[#848484]'>
                                 <p className='text-[12px] leading-[14px]'>
-                                    Product name
+                                    {language.ProductName}
                                 </p>
                                 <p className='text-[12px] leading-[14px] text-[#dd3a3a]'>
                                     Remaining 10%
@@ -171,19 +176,19 @@ const Main = () => {
             <div className='py-[30px]  w-full'>
                 <div className='flex w-full items-end'>
                     <p className='font-medium w-3/12 text-[24px] leading-[29px]'>
-                        New Orders
+                        {language.NewOrders}
                     </p>
                     <p className='font-medium w-4/12 text-[14px] leading-[17px]'>
-                        Customer Name
+                        {language.CustomerName}
                     </p>
                     <p className='font-medium w-2/12 text-[14px] leading-[17px]'>
-                        Ordered Date
+                        {language.OrderedDate}
                     </p>
                     <p className='font-medium w-2/12 text-[14px] leading-[17px]'>
-                        Amount
+                        {language.Amount}
                     </p>
                     <p className='font-medium w-3/12 text-[14px] leading-[17px]'>
-                        Status
+                        {language.Status}
                     </p>
                 </div>
                 <div className='mt-5 w-full h-[49px] px-5 flex items-center rounded-[10px] border border-[rgba(0,0,0,0.2)] shadow-sm'>

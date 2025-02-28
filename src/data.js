@@ -93,6 +93,7 @@ export const uzbek = {
     LastNameError: "Familiya kamida 2 ta harfdan iborat bo'lishi kerak",
     NickNameError: "Taxallus kamida 2 ta harfdan iborat bo'lishi kerak",
     BirthdayError: "Sanani YYYY-MM-DD formatida kiriting",
+    MobileNumberError: "Telefon raqamni to'g'ri kiriting",
     GenderError: "Jinsni tanlang: Erkak yoki Ayol",
     CityError: "Shaharingizni kiriting",
     AddressError: "Manizilingizni kiriting",
@@ -101,7 +102,24 @@ export const uzbek = {
     NickName: "Taxallus",
     ContactNumber: "Aloqa raqami",
     Address: "Manzil",
-    VerifiedAccount: "Tasdiqlangan hisob"
+    VerifiedAccount: "Tasdiqlangan hisob",
+    TotalProducts: "Jami mahsulotlar",
+    TotalSales: "Umumiy savdo",
+    PendingOrders: "Kutilayotgan buyurtmalar",
+    OnProccessToDelivery: "Yetkazib berish jarayonida",
+    StockSummary: "Birja xulosasi",
+    AddedStock: "Qo'shilgan zaxira",
+    AvailableStock: "Mavjud zaxira",
+    LowStockProducts: "Kam zaxirali mahsulotlar",
+    Introduce: "Yangi mahsulotingizni bozorga chiqaring",
+    NewOrders: "Yangi buyurtmalar",
+    CustomerName: "Mijoz nomi",
+    OrderedDate: "Buyurtma sanasi",
+    Amount: "Miqdori",
+    New: "Yangi",
+    Dashboard: "Boshqaruv paneli",
+    IncreaseItems: "Elementlarni ko'paytirish",
+    IncreaseTheProduct: "Mahsulotni ko'paytirish"
 }
 
 export const rus = {

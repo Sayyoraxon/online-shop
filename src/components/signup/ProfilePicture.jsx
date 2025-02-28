@@ -5,6 +5,7 @@ import AuthService from '../../service/Auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUserFailed, signUserStart, updateUserSuccess } from '../../slice/auth';
 import { useNavigate } from 'react-router';
+import { loggedIn } from '../../helpers/storage';
 
 const ProfilePicture = () => {
 
@@ -37,16 +38,17 @@ const ProfilePicture = () => {
 
         try {
             const res = await AuthService.updatePhoto(formData);
-            dispatch(updateUserSuccess())
+          
             console.log(res);
+            loggedIn(true)
+            navigate("/")
         } catch (err) {
             console.error(err);
-            dispatch(updateUserFailed(err.response.data[0]))
+            dispatch(updateUserFailed(err.response.data))
         }
     };
 
-    console.log(error)
-
+    
 
 
     return (

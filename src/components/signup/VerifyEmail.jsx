@@ -9,7 +9,7 @@ import { loggedIn } from '../../helpers/storage'
 
 const VerifyEmail = ({ email, setStep }) => {
 
-  const [seconds, setSeconds] = useState(3)
+  const [seconds, setSeconds] = useState(300)
 
   const [code, setCode] = useState("")
 
@@ -24,7 +24,6 @@ const VerifyEmail = ({ email, setStep }) => {
     try {
       const res = await AuthService.confirmCode({ "code": code })
       dispatch(registerUserSuccess(res))
-      loggedIn(true)
       setStep(3)
     } catch (err) {
       dispatch(registerUserFailure(err.response.data.message))

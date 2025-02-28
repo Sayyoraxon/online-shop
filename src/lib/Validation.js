@@ -74,6 +74,9 @@ export const useLoginSchema = () => {
       nickName: z.string().min(1, {
         message: language.NickNameError,
       }),
+      mobileNumber: z.string().min(1, {
+        message: language.MobileNumberError,
+      }),
       birthday: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, {
         message: language.BirthdayError,
       }),

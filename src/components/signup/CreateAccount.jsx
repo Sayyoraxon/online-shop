@@ -83,7 +83,7 @@ const CreateAccount = ({ setStep, setEmail }) => {
           {language.ShopperAccount}
         </button>
       </div>
-      {error && <p className='w-full h-5 text-[12px] text-red-500 text-left'>{error[0]}</p>}
+      {error && <p className='w-full h-5 text-[12px] text-red-500 text-left'>{error}</p>}
       <input type='text' {...register('email')} placeholder={language.EmailAddress}
         className='w-full h-[45px] rounded-[10px] bg-[#fff] backdrop-blur-[20px] border border-[#a1a1a1] px-3 outline-none' />
       {errors.email && <p className='w-full h-5 text-[12px] text-red-500 text-left'>{errors.email.message}</p>}
