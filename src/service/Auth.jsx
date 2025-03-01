@@ -1,7 +1,10 @@
 import axios from "axios"
 
 
-
+const API = axios.create({
+    baseURL: process.env.REACT_APP_API_BASE_URL, // Backendning HTTP manzili
+    headers: { "Content-Type": "application/json" }
+});
 
 const AuthService = {
 
@@ -12,7 +15,7 @@ const AuthService = {
     },
 
     async userLogin(user) {
-        const responce = await axios.post(`/v1/user/login/`, user)
+        const responce = await API.post(`/v1/user/login/`, user)
         return responce.data
     },
 
