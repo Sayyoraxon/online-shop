@@ -1,6 +1,9 @@
 import axios from "axios"
 
-const API_PROXY = "/api/proxy";
+const API_URL = process.env.REACT_APP_API_URL;
+
+console.log("Backend API URL:", API_URL); // Tekshirish uchun
+
 
 
 const AuthService = {
@@ -12,7 +15,7 @@ const AuthService = {
     },
 
     async userLogin(user) {
-        const responce = await axios.post(`${API_PROXY}/v1/user/login/`, user)
+        const responce = await axios.post(`${API_URL}/v1/user/login/`, user)
         return responce.data
     },
 
