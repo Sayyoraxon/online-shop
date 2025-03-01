@@ -1,6 +1,10 @@
 import axios from "axios"
 
+const API_PROXY = "/api/proxy"; 
+
+
 const AuthService = {
+
 
     async userRegister(user) {
         const responce = await axios.post('/v1/user/register/', user)
@@ -8,7 +12,7 @@ const AuthService = {
     },
 
     async userLogin(user) {
-        const responce = await axios.post('http://167.172.107.65:8000/v1/user/login/', user)
+        const responce = await axios.post(`${API_PROXY}/v1/user/login/`, user)
         return responce.data
     },
 
