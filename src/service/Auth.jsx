@@ -1,7 +1,6 @@
 import axios from "axios"
-import API_PROXY from "../pages/api/proxy"
 
-
+import API_PROXY from "../pages/api/proxy"; 
 
 
 const AuthService = {
