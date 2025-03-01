@@ -8,7 +8,7 @@ const AuthService = {
     },
 
     async userLogin(user) {
-        const responce = await axios.post('/v1/user/login/', user)
+        const responce = await axios.post('http://167.172.107.65:8000/v1/user/login/', user)
         return responce.data
     },
 
