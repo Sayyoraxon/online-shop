@@ -4,6 +4,16 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 console.log("Backend API URL:", API_URL); // Tekshirish uchun
 
+const api = axios.create({
+    baseURL: API_URL,
+    headers: {
+        "Content-Type": "application/json"
+    }
+});
+
+// Agar SSL sertifikat noto‘g‘ri bo‘lsa (faqat test uchun)
+api.defaults.httpsAgent = new (require('https').Agent)({ rejectUnauthorized: false });
+
 
 
 const AuthService = {
@@ -15,7 +25,7 @@ const AuthService = {
     },
 
     async userLogin(user) {
-        const responce = await axios.post(`${API_URL}/v1/user/login/`, user)
+        const responce = await api.post(`${API_URL}/v1/user/login/`, user)
         return responce.data
     },
 
