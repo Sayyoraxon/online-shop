@@ -7,6 +7,8 @@ const API = axios.create({
 });
 
 
+console.log(API)
+
 const AuthService = {
 
 
