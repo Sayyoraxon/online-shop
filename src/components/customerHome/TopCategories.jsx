@@ -12,7 +12,7 @@ const TopCategories = () => {
         <p className='font-medium text-[24px] leading-[29px]'>
             Shop Our Top Categories
         </p>
-        <div className='mt-[30px] w-full flex justify-between items-center'>
+        <div className='mt-[30px] w-full flex justify-between flex-wrap gap-y-5 items-center'>
             <div style={{backgroundImage: "linear-gradient(#64F5FD, #007BFF)"}} className='py-5 w-[168px] h-[232px] rounded-[10px] flex flex-col'>
                 <p className='text-center font-medium text-base leading-[19px]'>
                     Tech

@@ -1,4 +1,7 @@
 import brand from "../../assets/image/brand.png"
+import ChooseByShops from "./ChooseByShops"
+import DepartmentStores from "./DepartmentStores"
+import MostPopular from "./MostPopular"
 import TopCategories from "./TopCategories"
 
 const CustomerMain = () => {
@@ -20,6 +23,9 @@ const CustomerMain = () => {
             </div>
         </div>
         <TopCategories/>
+        <DepartmentStores/>
+        <ChooseByShops/>
+        <MostPopular/>
     </div>
   )
 }
