@@ -10,7 +10,7 @@ import { NavLink, Outlet, useNavigate } from 'react-router'
 import Logout from '../../components/home/Logout'
 import useStore from '../../store/useStore'
 
-const Home = () => {
+const Home = ({data}) => {
 
   const [logoutWindow, setLogoutWindow] = useState(false)
 
@@ -80,10 +80,10 @@ const Home = () => {
             <div>
               <div>
                 <p className='font-medium text-[14px] leading-[17px]'>
-                  Amishka
+                  {data && data.first_name}
                 </p>
                 <p className='font-semibold text-[12px] text-[#007BFF] leading-[14px]'>
-                  Shopper
+                  {data && data.account_type}
                 </p>
               </div>
             </div>
@@ -95,7 +95,7 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <div className='w-full'>
+      <div className='w-full h-screen overflow-scroll'>
         <Outlet />
       </div>
 

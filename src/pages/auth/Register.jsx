@@ -23,7 +23,7 @@ const Register = () => {
       }, [loggedIn])
 
   return (
-    <div className='relative w-full h-[100vh]'>
+    <div className='w-full h-[100vh]'>
       <div className="w-[1440px] h-full absolute top-0 laft-0">
         <div className='absolute top-[10%] left-[20%] h-[339px] w-[339px] rounded-full bg-[#007bff] opacity-60' >
         </div>

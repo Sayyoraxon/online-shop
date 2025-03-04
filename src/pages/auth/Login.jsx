@@ -27,7 +27,7 @@ const Login = () => {
 
 
     return (
-        <div className='flex bg-[rgba(255, 255, 255, 0.9)]'>
+        <div className='flex bg-white'>
             {openDialog && <VerifyDialog/>}
             <div className='w-[708px] h-[90vh] mx-auto flex flex-col justify-around items-center backdrop-blur-md'>
             <img src={logo} alt="logo" width={280} height={119} />

@@ -5,7 +5,7 @@ const Profile = ({data}) => {
   return (
     <div className='py-[38px] px-[23px]'>
         <p>
-            My Profile
+            Mening Profilim
         </p>
         <ProfileDiv data={data}/>
     </div>

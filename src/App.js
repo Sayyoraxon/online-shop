@@ -10,27 +10,31 @@ import CusChat from "./pages/cuschat/CusChat";
 import Profile from "./pages/profile/Profile";
 import { useEffect, useState } from "react";
 import AuthService from "./service/Auth";
+import Dashboard from "./components/home/Dashboard";
+import CustomerHome from "./pages/customerHome/CustomerHome";
+import CustomerMain from "./components/customerHome/CustomerMain";
+import { useSelector } from "react-redux";
 
 
 function App() {
 
   const [data, setData] = useState()
 
-  const getUser = async() => {
-    try{
+  const getUser = async () => {
+    try {
       const res = await AuthService.getUser()
       setData(res)
-    }catch(err){
+    } catch (err) {
       console.log(err)
     }
   }
 
-  const loggedIn = localStorage.getItem("loggedIn")
+  const { loggedIn } = useSelector((state) => state.auth)
 
-  useEffect(()=>{
-    
+  useEffect(() => {
+
     getUser()
-  },[loggedIn])
+  }, [loggedIn])
 
   console.log(data)
 
@@ -38,14 +42,20 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home data={data}/>}>
-          <Route index element={<Main/>}/>
-          <Route path="/product" element={<Product data={data}/>}/>
-          <Route path="/customers" element={<Customers data={data}/>}/>
-          <Route path="/cuschat" element={<CusChat data={data}/>}/>
-          <Route path="/profile" element={<Profile data={data}/>}/>
-        </Route>
-        <Route path="about" element={<About />} />
+        {data && data.account_type === "shopper"
+          ?
+          <Route path="/" element={<Home data={data} />}>
+            <Route index element={<Dashboard />} />
+            <Route path="/product" element={<Product data={data} />} />
+            <Route path="/customers" element={<Customers data={data} />} />
+            <Route path="/cuschat" element={<CusChat data={data} />} />
+            <Route path="/profile" element={<Profile data={data} />} />
+          </Route>
+          :
+          <Route path="/" element={<CustomerHome />}>
+            <Route index element={<CustomerMain />} />
+          </Route>
+        }
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>

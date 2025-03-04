@@ -2,12 +2,12 @@ import axios from "axios"
 
 
 const API = axios.create({
-    baseURL: process.env.REACT_APP_API_BASE_URL, // Backend HTTP manzili
+    baseURL: process.env.REACT_APP_API_BASE_URL,
     headers: { "Content-Type": "application/json" }
 });
 
 
-console.log(API)
+
 
 const AuthService = {
 

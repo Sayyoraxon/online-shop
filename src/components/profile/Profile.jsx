@@ -8,7 +8,9 @@ const ProfileDiv = ({data}) => {
     <div className='mt-10 pl-[21px] w-full'>
         <div className='w-full flex justify-between flex-wrap gap-3 items-start'>
             <div>
-                <div className='w-[250px] h-[250px] rounded-[10px] bg-[#d9d9d9]'></div>
+                <div className='w-[250px] h-[250px] rounded-[10px] bg-[#d9d9d9] overflow-hidden'>
+                    <img className='w-full h-full object-cover' src={data.profile_picture} alt="picture"/>
+                </div>
                 <p className='mt-6 font-medium text-[14px] leading-4 text-[#3DB39E] text-center'>
                     {language.VerifiedAccount}
                 </p>
@@ -18,13 +20,13 @@ const ProfileDiv = ({data}) => {
                     {language.Name}
                 </p>
                 <p className='mt-1 font-medium text-[32px] leading-[38px]'>
-                    {data.full_name}
+                    {data.first_name}
                 </p>
                 <p className='mt-[30px] font-medium text-base leading-[19px] text-[#6B6A6E]'>
                     {language.NickName}
                 </p>
                 <p className='mt-1 font-medium text-[20px] leading-6'>
-                    Amishka Dissanayake
+                    {data.nic_number}
                 </p>
                 <p className='mt-[30px] font-medium text-base leading-[19px] text-[#6B6A6E]'>
                     {language.Birthday}
