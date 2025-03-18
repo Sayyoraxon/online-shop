@@ -49,7 +49,7 @@ const CustomerHome = () => {
                    :
                    <div className='flex gap-10'>
                         <NavLink to="/register" className="px-5 py-[9px] rounded-[100px] bg-[#007BFF] font-medium text-sm leading-4 text-white">
-                            Ro'hatdan o'tish
+                            Ro'yxatdan o'tish
                         </NavLink>
                         <NavLink to="/login" className="px-5 py-[9px] rounded-[100px] border border-[#007BFF] font-medium text-sm leading-4 text-[#007BFF]">
                             Kirish
