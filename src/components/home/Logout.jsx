@@ -2,6 +2,8 @@ import { useNavigate } from "react-router"
 import close from "../../assets/icons/close.svg"
 import useStore from "../../store/useStore"
 import { logOut } from "../../helpers/storage"
+import { useDispatch } from "react-redux"
+import { logout } from "../../slice/auth"
 
 const Logout = ({setLogoutWindow}) => {
 
@@ -9,7 +11,10 @@ const Logout = ({setLogoutWindow}) => {
 
     const navigate = useNavigate()
 
+    const dispatch = useDispatch()
+
     const handleLogout = () => {
+        dispatch(logout())
         logOut()
         navigate("/login")
     }
