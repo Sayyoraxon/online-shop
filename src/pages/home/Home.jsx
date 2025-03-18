@@ -75,7 +75,7 @@ const Home = ({data}) => {
           <NavLink to="/profile" className='flex gap-3 mt-4 items-center'>
             <div className='w-11 h-11 rounded-full bg-[#d9d9d9]'>
                 {data && data.profile_picture !== "" &&
-                <img className='w-11 h-11 object-cover rounded-full' src={`http://167.172.107.65:8000${data.profile_picture}`} alt='user'/>}
+                <img className='w-11 h-11 object-cover rounded-full' src={`https://buyze.uz${data.profile_picture}`} alt='user'/>}
             </div>
             <div>
               <div>
