@@ -46,7 +46,7 @@ const CreateAccount = ({ setStep, setEmail }) => {
   
       setStep(2)
     } catch (err) {
-      console.log(err.response.data)
+      console.log(err)
       dispatch(registerUserFailure(err.response.data))
     }
   };
@@ -64,7 +64,7 @@ const CreateAccount = ({ setStep, setEmail }) => {
     setAccounttype(e.name)
   }
 
-  console.log(accountType)
+ 
 
 
   return (

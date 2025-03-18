@@ -1,8 +1,8 @@
-import React from 'react'
+import { FaHeart, FaUser } from "react-icons/fa";
 import { NavLink, Outlet } from 'react-router'
 import logo from "../../assets/icons/logo.svg"
 import bucket from "../../assets/icons/savat.svg"
-import { useSelector } from 'react-redux'
+import Footer from '../../components/footer/Footer'
 
 const CustomerHome = () => {
 
@@ -10,43 +10,55 @@ const CustomerHome = () => {
 
     return (
         <div className='w-full'>
-            <div className='max-w-[1108px] mx-auto'>
+            <div className='max-w-[1148px] mx-auto px-5'>
                 <div className='w-full flex justify-between items-center mb-[27px]'>
-                    <img src={logo} alt="logo" width={146}/>
+                    <NavLink to="/">
+                        <img src={logo} alt="logo" width={146}/>
+                    </NavLink>
+                    
                     <div className='flex gap-10'>
                         <NavLink to="/" className="font-medium text-[14px] leading-4">
-                            Home
+                            Asosiy
                         </NavLink>
                         <NavLink to="/shop" className="font-medium text-[14px] leading-4">
-                            Shop Online
+                            Online harid
                         </NavLink>
                         <NavLink to="/news" className="font-medium text-[14px] leading-4 ">
-                            What's New
+                            Yangiliklar
                         </NavLink>
                         <NavLink to="/contact" className="font-medium text-[14px] leading-4 ">
-                            Contact
+                            Kontakt
                         </NavLink>
                         <NavLink to="/about" className="font-medium text-[14px] leading-4">
-                            About us
+                            Biz haqimizda
                         </NavLink>
                     </div>
                    {loggedIn 
                    ?
+                   <div className="flex items-center gap-3">
+                    <NavLink to="wishes">
+                        <FaHeart style={{fontSize: "25px", color: "#007bff"}}/>
+                   </NavLink>
                    <button>
-                        <img src={bucket} alt="bucket"/>
+                        <FaUser style={{fontSize: "25px", color: "#007bff"}}/>
                    </button>
+                   <NavLink to="cart">
+                        <img src={bucket} alt="bucket"/>
+                   </NavLink>
+                   </div>
                    :
                    <div className='flex gap-10'>
                         <NavLink to="/register" className="px-5 py-[9px] rounded-[100px] bg-[#007BFF] font-medium text-sm leading-4 text-white">
-                            Sign Up
+                            Ro'hatdan o'tish
                         </NavLink>
                         <NavLink to="/login" className="px-5 py-[9px] rounded-[100px] border border-[#007BFF] font-medium text-sm leading-4 text-[#007BFF]">
-                            Sign In
+                            Kirish
                         </NavLink>
                     </div>}
                 </div>
                 <Outlet />
             </div>
+            <Footer/>
         </div>
     )
 }

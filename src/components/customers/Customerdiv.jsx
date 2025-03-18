@@ -1,4 +1,5 @@
 import React from 'react'
+import { IoIosArrowForward } from 'react-icons/io'
 
 const Customerdiv = () => {
     return (
@@ -25,7 +26,7 @@ const Customerdiv = () => {
                     <p className='w-2/12'>
                         Total income
                     </p>
-                    
+
                 </div>
                 <div className='px-5 mt-[19px] h-[50px] w-full flex justify-between items-center rounded-[10px] border'>
                     <p className='w-2/12'>
@@ -40,253 +41,16 @@ const Customerdiv = () => {
                     <p className='w-3/12'>
                         30 orders
                     </p>
-                    <p className='w-2/12'>
-                        Rs.100,000.00
-                    </p>
-                    <p className='w-1/12 text-right'>
-                        {">"}
-                    </p>
+                    <div className='w-3/12 flex justify-between items-center'>
+                        <p>
+                            Rs.100,000.00
+                        </p>
+                        <button>
+                            <IoIosArrowForward />
+                        </button>
+                    </div>
                 </div>
-                <div className='px-5 mt-[9px] h-[50px] w-full flex justify-between items-center rounded-[10px] border'>
-                    <p className='w-2/12'>
-                        Ahinsa De Silva
-                    </p>
-                    <p className='w-2/12'>
-                        Ahinsa@gmail.com
-                    </p>
-                    <p className='w-2/12'>
-                        30 orders
-                    </p>
-                    <p className='w-3/12'>
-                        30 orders
-                    </p>
-                    <p className='w-2/12'>
-                        Rs.100,000.00
-                    </p>
-                    <p className='w-1/12 text-right'>
-                        {">"}
-                    </p>
-                </div>
-                <div className='px-5 mt-[9px] h-[50px] w-full flex justify-between items-center rounded-[10px] border'>
-                    <p className='w-2/12'>
-                        Ahinsa De Silva
-                    </p>
-                    <p className='w-2/12'>
-                        Ahinsa@gmail.com
-                    </p>
-                    <p className='w-2/12'>
-                        30 orders
-                    </p>
-                    <p className='w-3/12'>
-                        30 orders
-                    </p>
-                    <p className='w-2/12'>
-                        Rs.100,000.00
-                    </p>
-                    <p className='w-1/12 text-right'>
-                        {">"}
-                    </p>
-                </div>
-                <div className='px-5 mt-[9px] h-[50px] w-full flex justify-between items-center rounded-[10px] border'>
-                    <p className='w-2/12'>
-                        Ahinsa De Silva
-                    </p>
-                    <p className='w-2/12'>
-                        Ahinsa@gmail.com
-                    </p>
-                    <p className='w-2/12'>
-                        30 orders
-                    </p>
-                    <p className='w-3/12'>
-                        30 orders
-                    </p>
-                    <p className='w-2/12'>
-                        Rs.100,000.00
-                    </p>
-                    <p className='w-1/12 text-right'>
-                        {">"}
-                    </p>
-                </div>
-                <div className='px-5 mt-[9px] h-[50px] w-full flex justify-between items-center rounded-[10px] border'>
-                    <p className='w-2/12'>
-                        Ahinsa De Silva
-                    </p>
-                    <p className='w-2/12'>
-                        Ahinsa@gmail.com
-                    </p>
-                    <p className='w-2/12'>
-                        30 orders
-                    </p>
-                    <p className='w-3/12'>
-                        30 orders
-                    </p>
-                    <p className='w-2/12'>
-                        Rs.100,000.00
-                    </p>
-                    <p className='w-1/12 text-right'>
-                        {">"}
-                    </p>
-                </div>
-                <div className='px-5 mt-[9px] h-[50px] w-full flex justify-between items-center rounded-[10px] border'>
-                    <p className='w-2/12'>
-                        Ahinsa De Silva
-                    </p>
-                    <p className='w-2/12'>
-                        Ahinsa@gmail.com
-                    </p>
-                    <p className='w-2/12'>
-                        30 orders
-                    </p>
-                    <p className='w-3/12'>
-                        30 orders
-                    </p>
-                    <p className='w-2/12'>
-                        Rs.100,000.00
-                    </p>
-                    <p className='w-1/12 text-right'>
-                        {">"}
-                    </p>
-                </div>
-                <div className='px-5 mt-[9px] h-[50px] w-full flex justify-between items-center rounded-[10px] border'>
-                    <p className='w-2/12'>
-                        Ahinsa De Silva
-                    </p>
-                    <p className='w-2/12'>
-                        Ahinsa@gmail.com
-                    </p>
-                    <p className='w-2/12'>
-                        30 orders
-                    </p>
-                    <p className='w-3/12'>
-                        30 orders
-                    </p>
-                    <p className='w-2/12'>
-                        Rs.100,000.00
-                    </p>
-                    <p className='w-1/12 text-right'>
-                        {">"}
-                    </p>
-                </div>
-                <div className='px-5 mt-[9px] h-[50px] w-full flex justify-between items-center rounded-[10px] border'>
-                    <p className='w-2/12'>
-                        Ahinsa De Silva
-                    </p>
-                    <p className='w-2/12'>
-                        Ahinsa@gmail.com
-                    </p>
-                    <p className='w-2/12'>
-                        30 orders
-                    </p>
-                    <p className='w-3/12'>
-                        30 orders
-                    </p>
-                    <p className='w-2/12'>
-                        Rs.100,000.00
-                    </p>
-                    <p className='w-1/12 text-right'>
-                        {">"}
-                    </p>
-                </div>
-                <div className='px-5 mt-[9px] h-[50px] w-full flex justify-between items-center rounded-[10px] border'>
-                    <p className='w-2/12'>
-                        Ahinsa De Silva
-                    </p>
-                    <p className='w-2/12'>
-                        Ahinsa@gmail.com
-                    </p>
-                    <p className='w-2/12'>
-                        30 orders
-                    </p>
-                    <p className='w-3/12'>
-                        30 orders
-                    </p>
-                    <p className='w-2/12'>
-                        Rs.100,000.00
-                    </p>
-                    <p className='w-1/12 text-right'>
-                        {">"}
-                    </p>
-                </div>
-                <div className='px-5 mt-[9px] h-[50px] w-full flex justify-between items-center rounded-[10px] border'>
-                    <p className='w-2/12'>
-                        Ahinsa De Silva
-                    </p>
-                    <p className='w-2/12'>
-                        Ahinsa@gmail.com
-                    </p>
-                    <p className='w-2/12'>
-                        30 orders
-                    </p>
-                    <p className='w-3/12'>
-                        30 orders
-                    </p>
-                    <p className='w-2/12'>
-                        Rs.100,000.00
-                    </p>
-                    <p className='w-1/12 text-right'>
-                        {">"}
-                    </p>
-                </div>
-                <div className='px-5 mt-[9px] h-[50px] w-full flex justify-between items-center rounded-[10px] border'>
-                    <p className='w-2/12'>
-                        Ahinsa De Silva
-                    </p>
-                    <p className='w-2/12'>
-                        Ahinsa@gmail.com
-                    </p>
-                    <p className='w-2/12'>
-                        30 orders
-                    </p>
-                    <p className='w-3/12'>
-                        30 orders
-                    </p>
-                    <p className='w-2/12'>
-                        Rs.100,000.00
-                    </p>
-                    <p className='w-1/12 text-right'>
-                        {">"}
-                    </p>
-                </div>
-                <div className='px-5 mt-[9px] h-[50px] w-full flex justify-between items-center rounded-[10px] border'>
-                    <p className='w-2/12'>
-                        Ahinsa De Silva
-                    </p>
-                    <p className='w-2/12'>
-                        Ahinsa@gmail.com
-                    </p>
-                    <p className='w-2/12'>
-                        30 orders
-                    </p>
-                    <p className='w-3/12'>
-                        30 orders
-                    </p>
-                    <p className='w-2/12'>
-                        Rs.100,000.00
-                    </p>
-                    <p className='w-1/12 text-right'>
-                        {">"}
-                    </p>
-                </div>
-                <div className='px-5 mt-[9px] h-[50px] w-full flex justify-between items-center rounded-[10px] border'>
-                    <p className='w-2/12'>
-                        Ahinsa De Silva
-                    </p>
-                    <p className='w-2/12'>
-                        Ahinsa@gmail.com
-                    </p>
-                    <p className='w-2/12'>
-                        30 orders
-                    </p>
-                    <p className='w-3/12'>
-                        30 orders
-                    </p>
-                    <p className='w-2/12'>
-                        Rs.100,000.00
-                    </p>
-                    <p className='w-1/12 text-right'>
-                        {">"}
-                    </p>
-                </div>
+       
             </div>
         </div>
     )

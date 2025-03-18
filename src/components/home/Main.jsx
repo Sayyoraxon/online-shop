@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import box from "../../assets/icons/box.svg"
 import truck from "../../assets/icons/delivery-truck.svg"
 import sales from "../../assets/icons/sales.svg"
@@ -6,14 +6,18 @@ import orders from "../../assets/icons/product.svg"
 import product1 from "../../assets/icons/product 1.svg"
 import plus from "../../assets/icons/add.svg"
 import useStore from '../../store/useStore'
+import AddProduct from '../product/AddProduct'
 
-const Main = () => {
+const Main = ({products}) => {
 
     const {language} = useStore()
+
+    const [addProduct, setAddProduct] = useState(false)
 
 
     return (
         <div className='w-full pt-[38px] pl-[23px] pr-[45px]'>
+            {addProduct && <AddProduct setAddProduct={setAddProduct}/>}
             <p className='font-medium text-[24px] leading-[29px]'>
                 {language.Dashboard}
             </p>
@@ -23,7 +27,7 @@ const Main = () => {
                         <div className='flex justify-between items-center px-5 py-4 w-[300px] h-[100px] rounded-[9px] shadow-md shadow-gray-400 grow'>
                             <div>
                                 <p className='font-medium text-[36px] leading-[46px] text-[#007bff]'>
-                                    240
+                                    {products && products.length}
                                 </p>
                                 <p className='font-medium text-[14px] leading-4 text-[#007bff]'>
                                     {language.TotalProducts}
@@ -67,7 +71,7 @@ const Main = () => {
                     </div>
                     <hr className='my-6 w-full h-px' />
                     <div className='flex gap-6 flex-wrap'>
-                        <div className='w-[300px] h-[163px] p-5 rounded-[9px] shadow-md shadow-gray-400 grow bg-[#ffeac9]'>
+                        <div onClick={()=>setAddProduct(true)} className='w-[300px] h-[163px] p-5 rounded-[9px] shadow-md shadow-gray-400 grow bg-[#ffeac9] cursor-pointer'>
                             <p className='font-medium text-[20px] leading-[24px]'>
                                {language.AddNewProduct}
                             </p>
@@ -126,7 +130,7 @@ const Main = () => {
                                     {language.ProductName}
                                 </p>
                                 <p className='text-[12px] leading-[14px] text-[#dd3a3a]'>
-                                    Remaining 10%
+                                    10% qolgan
                                 </p>
                             </div>
                             <div className='w-full h-[25px] flex justify-between items-center border-b border-[#848484]'>
@@ -134,7 +138,7 @@ const Main = () => {
                                     {language.ProductName}
                                 </p>
                                 <p className='text-[12px] leading-[14px] text-[#dd3a3a]'>
-                                    Remaining 10%
+                                    10% qolgan
                                 </p>
                             </div>
                             <div className='w-full h-[25px] flex justify-between items-center border-b border-[#848484]'>
@@ -142,7 +146,7 @@ const Main = () => {
                                     {language.ProductName}
                                 </p>
                                 <p className='text-[12px] leading-[14px] text-[#dd3a3a]'>
-                                    Remaining 10%
+                                    10% qolgan
                                 </p>
                             </div>
                             <div className='w-full h-[25px] flex justify-between items-center border-b border-[#848484]'>
@@ -150,7 +154,7 @@ const Main = () => {
                                     {language.ProductName}
                                 </p>
                                 <p className='text-[12px] leading-[14px] text-[#dd3a3a]'>
-                                    Remaining 10%
+                                    10% qolgan
                                 </p>
                             </div>
                             <div className='w-full h-[25px] flex justify-between items-center border-b border-[#848484]'>
@@ -158,7 +162,7 @@ const Main = () => {
                                     {language.ProductName}
                                 </p>
                                 <p className='text-[12px] leading-[14px] text-[#dd3a3a]'>
-                                    Remaining 10%
+                                    10% qolgan
                                 </p>
                             </div>
                             <div className='w-full h-[25px] flex justify-between items-center border-b border-[#848484]'>
@@ -166,7 +170,7 @@ const Main = () => {
                                     {language.ProductName}
                                 </p>
                                 <p className='text-[12px] leading-[14px] text-[#dd3a3a]'>
-                                    Remaining 10%
+                                    10% qolgan
                                 </p>
                             </div>
                         </div>

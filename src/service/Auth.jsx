@@ -2,11 +2,9 @@ import axios from "axios"
 
 
 const API = axios.create({
-    baseURL: process.env.REACT_APP_API_BASE_URL || 'http://167.172.107.65:8000',
+    baseURL: process.env.REACT_APP_API_BASE_URL || 'https://buyze.uz/',
     headers: { "Content-Type": "application/json" }
 });
-
-
 
 
 const AuthService = {
@@ -23,7 +21,9 @@ const AuthService = {
     },
 
     async confirmCode(code) {
+
         const token = localStorage.getItem("token")
+
         const res = await API.post('/v1/user/confirm-code/',
             code,
             {
@@ -38,6 +38,7 @@ const AuthService = {
     async newConfirmCode() {
 
         const token = localStorage.getItem("token")
+
         const res = await API.get('/v1/user/new-confirm-code/',
             {
                 headers: {
@@ -49,7 +50,9 @@ const AuthService = {
     },
 
     async updateProfile(data) {
+
         const token = localStorage.getItem("token")
+
         const responce = await API.put('/v1/user/user-update/', data,
             {
                 headers: {
@@ -61,7 +64,9 @@ const AuthService = {
     },
 
     async updatePhoto(data) {
+
         const token = localStorage.getItem("token")
+
         const responce = await API.put('/v1/user/user-update-photo/', data,
             {
                 headers: {
@@ -75,6 +80,7 @@ const AuthService = {
     async getUser() {
 
         const token = localStorage.getItem("token")
+
         const res = await API.get('/v1/user/get-me',
             {
                 headers: {
@@ -84,7 +90,81 @@ const AuthService = {
             })
         return res.data
 
-    }
+    },
+
+    async createShop(data) {
+
+        const token = localStorage.getItem("token")
+
+        const res = await API.post('/v1/shopper/shop-create-list/', data,
+            {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                }
+            })
+
+        return res
+    },
+
+    async addProduct(data) {
+
+        const token = localStorage.getItem("token")
+
+        const res = await API.post('/v1/shopper/product-create/', data,
+            {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': "multipart/form-data",
+                }
+            })
+
+        return res
+    },
+
+    async getProducts() {
+        const token = localStorage.getItem("token")
+        const id = localStorage.getItem("shopId")
+
+        const res = await API.get(`/v1/shopper/shop/${id}/products/`,
+            {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': "application/json",
+                }
+            })
+
+        return res
+    },
+
+    async updateProduct(slug, data) {
+        const token = localStorage.getItem("token")
+
+        const res = await API.put(`/v1/shopper/product/update/${slug}/`, data,
+            {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': "application/json",
+                }
+            })
+
+        return res
+    },
+
+    async getAllProducts() {
+        const token = localStorage.getItem("token")
+
+        const res = await API.get(`/v1/customer/product-list/`,
+            {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': "application/json",
+                }
+            })
+
+        return res
+    },
+
 
 }
 

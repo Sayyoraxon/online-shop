@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import logo from "../../assets/icons/logo.svg"
 import homelogo from "../../assets/icons/homelogo.svg"
 import productlogo from "../../assets/icons/productlogo.svg"
-import orderslogo from "../../assets/icons/orderslogo.svg"
 import customerslogo from "../../assets/icons/customerslogo.svg"
 import cuschatlogo from "../../assets/icons/cuschatlogo.svg"
 import logout from "../../assets/icons/logout.svg"
@@ -24,7 +23,7 @@ const Home = ({data}) => {
     if(!loggedIn){
       navigate("/login")
     }
-  }, [loggedIn])
+  }, [loggedIn, navigate])
 
   return (
     <div className='w-full flex'>
@@ -48,10 +47,10 @@ const Home = ({data}) => {
               </NavLink>
             </li>
             <li>
-              <NavLink className="mt-8 flex items-center gap-5 font-medium text-[14px] text-[#a39e9e] leading-4">
+              {/* <NavLink className="mt-8 flex items-center gap-5 font-medium text-[14px] text-[#a39e9e] leading-4">
                 <img src={orderslogo} alt="logo" />
                 {language.Orders}
-              </NavLink>
+              </NavLink> */}
             </li>
             <li>
               <NavLink to="/customers"
@@ -71,11 +70,12 @@ const Home = ({data}) => {
         </div>
         <div className='bg-[#F9F2EF] h-full p-[30px]'>
           <p className='font-semibold text-[10px] leading-3'>
-            PROFILE
+            PROFIL
           </p>
           <NavLink to="/profile" className='flex gap-3 mt-4 items-center'>
             <div className='w-11 h-11 rounded-full bg-[#d9d9d9]'>
-
+                {data && data.profile_picture !== "" &&
+                <img className='w-11 h-11 object-cover rounded-full' src={`http://167.172.107.65:8000${data.profile_picture}`} alt='user'/>}
             </div>
             <div>
               <div>

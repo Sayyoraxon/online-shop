@@ -4,9 +4,8 @@ import { useState } from "react"
 import Products from "../../components/product/Products"
 import AddProduct from "../../components/product/AddProduct"
 import useStore from "../../store/useStore"
-import { late } from "zod"
 
-const Product = () => {
+const Product = ({products}) => {
 
   const [category, setCategory] = useState(false)
   const [addProduct, setAddProduct] = useState(false)
@@ -21,7 +20,7 @@ const Product = () => {
           {language.Products}
         </p>
         <div className='mt-[29px] flex gap-10 justify-end items-end'>
-          <input type="text" placeholder={language.SearchProduct}
+          <input type="search" placeholder={language.SearchProduct}
             className='w-[335px] h-10 px-5 rounded-[9px] border border-[#6f6f6f] text-base leading-[19px] text-[#6f6f6f]' />
           <div className='relative flex px-5 justify-between gap-5 items-center h-[42px] rounded-[9px] border border-[#6f6f6f]'>
             <p className='font-medium text-base leading-[19px] text-[#6f6f6f]'>
@@ -48,7 +47,7 @@ const Product = () => {
             <img src={plus} alt="ALT" />
           </button>
         </div>
-        <Products />
+        <Products products={products}/>
       </div>
     </>
   )

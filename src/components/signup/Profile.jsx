@@ -6,6 +6,8 @@ import { useForm } from 'react-hook-form';
 import AuthService from '../../service/Auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { signUserFailure, signUserStart } from '../../slice/auth';
+import { loggedIn } from '../../helpers/storage';
+import { useNavigate } from 'react-router';
 
 const Profile = ({ setStep }) => {
 
@@ -16,6 +18,8 @@ const Profile = ({ setStep }) => {
     const { language } = useStore()
 
     const { schemaProfile } = useLoginSchema()
+
+    const navigate = useNavigate()
 
     const {
         register,

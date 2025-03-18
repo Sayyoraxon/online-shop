@@ -4,7 +4,7 @@ const CustomersList = ({messages, setMessages}) => {
   return (
  
     <div className={`px-[15px] py-5 shadow-inner shadow-gray-300 md:min-w-[354px] min-w-full h-[85vh] overflow-scroll rounded-[10px] bg-[#fbf9f8] md:block ${messages ? "hidden" : "block"}`}>
-        <input className='w-full h-10 px-5 rounded-[9px] border border-[#6F6F6F] bg-white font-medium text-base leading-[19px] text-[#636363]'
+        <input type='search' className='w-full h-10 px-5 rounded-[9px] border border-[#6F6F6F] bg-white font-medium text-base leading-[19px] text-[#636363]'
         placeholder='Search Customer'/>
         <div className='mt-5'>
             <div onClick={()=>setMessages(true)}

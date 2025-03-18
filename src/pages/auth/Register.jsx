@@ -20,7 +20,7 @@ const Register = () => {
         if(loggedIn){
           navigate("/")
         }
-      }, [loggedIn])
+      }, [loggedIn, navigate])
 
   return (
     <div className='w-full h-[100vh]'>

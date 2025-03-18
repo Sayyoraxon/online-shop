@@ -95,9 +95,49 @@ export const useLoginSchema = () => {
     });
   }, [language]);
 
+  const schemaShop = useMemo(() => {
+    return z.object({
+      shopName: z.string().min(2, {
+        message: language.ShopNameError,
+      }),
+      email: z.string().email({
+        message: language.EmailError
+      }),
+      mobileNumber: z.string().min(1, {
+        message: language.MobileNumberError,
+      }),
+      streed: z.string().min(2, {
+        message: language.AddressError,
+      }),
+      city: z.string().min(2, {
+        message: language.CityError,
+      }),
+      zipCode: z.string().min(2, {
+        message: language.ZipCodeError,
+      })
+    });
+  }, [language]);
+
+  const schemaProduct = useMemo(() => {
+    return z.object({
+      productName: z.string().min(2, {
+        message: "Mahsulot nomini kiriting",
+      }),
+      quantity: z.coerce.number().min(1, {
+        message: "Mahsulot miqdorini kiriting",
+      }),
+      price: z.string().min(2, {
+        message: "Mahsulot narxini kiriting",
+      }),
+      description: z.string().min(2, {
+        message: "Mahsulot tavsifini kiriting",
+      })
+    });
+  }, []);
 
 
-  return { schemaLogin, schemaForgetPassword, schemaResetPassword, schemaSignUp, schemaProfile };
+
+  return { schemaLogin, schemaForgetPassword, schemaResetPassword, schemaSignUp, schemaProfile, schemaShop, schemaProduct };
 };
 
 

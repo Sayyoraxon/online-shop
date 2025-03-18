@@ -3,7 +3,7 @@ import plus from "../../assets/icons/plus1.svg"
 import { useRef, useState } from "react";
 import useStore from "../../store/useStore";
 
-const AddPhoto = () => {
+const AddPhoto = ({setText}) => {
 
     const {language} = useStore()
 
@@ -65,7 +65,8 @@ const AddPhoto = () => {
             </div>
             <div className='mt-[90px] flex items-center justify-end gap-[30px]'>
 
-                <button className='w-[262px] h-[45px] rounded-[10px] bg-[#007bff] text-white font-bold text-base leading-[19px]'>
+                <button onClick={()=>setText("video")}
+                 className='w-[262px] h-[45px] rounded-[10px] bg-[#007bff] text-white font-bold text-base leading-[19px]'>
                     {language.Publish}
                 </button>
                 <button className='w-[262px] h-[45px] rounded-[10px] border border-[#007bff] text-[#007bff] bg-white font-bold text-base leading-[19px]'>

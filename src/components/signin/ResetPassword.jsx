@@ -7,7 +7,7 @@ import verifyStore from '../../store/verifyStore';
 
 const ResetPassword = () => {
 
-    const {openSuccess, openFailure} = verifyStore()
+    const { openFailure} = verifyStore()
 
     const { language } = useStore();
 

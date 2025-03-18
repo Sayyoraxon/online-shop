@@ -9,7 +9,7 @@ const ProfileDiv = ({data}) => {
         <div className='w-full flex justify-between flex-wrap gap-3 items-start'>
             <div>
                 <div className='w-[250px] h-[250px] rounded-[10px] bg-[#d9d9d9] overflow-hidden'>
-                    <img className='w-full h-full object-cover' src={data.profile_picture} alt="picture"/>
+                    <img className='w-full h-full object-cover' src={`http://167.172.107.65:8000${data.profile_picture}`} alt="picturer"/>
                 </div>
                 <p className='mt-6 font-medium text-[14px] leading-4 text-[#3DB39E] text-center'>
                     {language.VerifiedAccount}
@@ -44,7 +44,7 @@ const ProfileDiv = ({data}) => {
                     {language.Address}
                 </p>
                 <p className='mt-1 font-medium text-[20px] leading-6'>
-                    42B/3, Buddhaloka mawatha, Suwarapola, Piliyandala
+                    {data.street_address}
                 </p>
                 <p className='mt-[30px] font-medium text-base leading-[19px] text-[#6B6A6E]'>
                     {language.City}
@@ -55,24 +55,19 @@ const ProfileDiv = ({data}) => {
             </div>
             <div className='w-[300px] h-[625px] p-5 rounded-[10px] bg-[#FBF9F9] shadow-inner'>
                 <p className='font-medium text-[20px] leading-6 text-center'>
-                    Your Shops
+                    Sizning do'konlaringiz
                 </p>
-                <div className='mt-5 w-full h-[80px] bg-white rounded-[10px] flex shadow-md px-5 py-2.5 items-center gap-5'>
+                {data.shops.length !== 0 &&
+                data.shops.map((shop)=>(
+                    <div className='mt-5 w-full h-[80px] bg-white rounded-[10px] flex shadow-md px-5 py-2.5 items-center gap-5'>
                     <div className='w-[60px] h-[60px] rounded-full bg-[#d9d9d9]'>
 
                     </div>
                     <p className='font-medium text-[14px] leading-6'>
-                        Shop Name
+                        {shop.name}
                     </p>
                 </div>
-                <div className='mt-2.5 w-full h-[80px] bg-white rounded-[10px] flex shadow-md px-5 py-2.5 items-center gap-5'>
-                    <div className='w-[60px] h-[60px] rounded-full bg-[#d9d9d9]'>
-
-                    </div>
-                    <p className='font-medium text-[14px] leading-6'>
-                        Shop Name
-                    </p>
-                </div>
+                ))}
             </div>
         </div>
     </div>

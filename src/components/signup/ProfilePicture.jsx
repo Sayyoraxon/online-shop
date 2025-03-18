@@ -3,11 +3,11 @@ import useStore from '../../store/useStore'
 import upload from "../../assets/image/upload.png"
 import AuthService from '../../service/Auth';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateUserFailed, signUserStart, updateUserSuccess } from '../../slice/auth';
+import { updateUserFailed, signUserStart } from '../../slice/auth';
 import { useNavigate } from 'react-router';
 import { loggedIn } from '../../helpers/storage';
 
-const ProfilePicture = () => {
+const ProfilePicture = ({setStep}) => {
 
     const [file, setFile] = useState(null);
 
@@ -48,7 +48,7 @@ const ProfilePicture = () => {
         }
     };
 
-    
+    console.log(file)
 
 
     return (
@@ -60,10 +60,10 @@ const ProfilePicture = () => {
             <button onClick={() => document.getElementById("fileInput").click()}
                 className='overflow-hidden w-[315px] h-[315px] rounded-full bg-white border-[2px] border-black border-dashed flex flex-col gap-4 justify-center items-center'>
                 <img src={upload} alt="upload" />
-                {file === null &&
+              
                     <p className='text-[18px] leading-[21px] text-[#bfbfbf]'>
                         {language.UploadPicture}
-                    </p>}
+                    </p>
             </button>
             <input
                 id="fileInput"
@@ -74,10 +74,13 @@ const ProfilePicture = () => {
             />
             {error && <p className='h-5 text-[12px] text-red-500 text-left'>{error}</p>}
 
-            <button onClick={submit} className='w-full h-[45px] rounded-[10px] bg-[#007bff] text-white font-semibold text-base leading-[19px]'>
+            <button onClick={submit} disabled={isLoading} className='w-full h-[45px] rounded-[10px] bg-[#007bff] text-white font-semibold text-base leading-[19px]'>
                 {language.Submit}
             </button>
-            <button onClick={() => navigate("/")} disabled={isLoading}
+            <button onClick={() => {
+                loggedIn(true)
+                navigate("/")
+            }}
                 className='w-full h-[45px] rounded-[10px] text-[#007bff] font-semibold text-base leading-[19px]'>
                 {language.Skip}
             </button>
