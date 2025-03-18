@@ -15,7 +15,7 @@ const Logout = ({setLogoutWindow}) => {
     }
 
   return (
-    <div className='absolute w-screen h-screen backdrop-blur-[10px] flex justify-center items-center'>
+    <div className='absolute w-screen h-screen backdrop-blur-[10px] flex justify-center items-center z-50'>
         <button onClick={()=>setLogoutWindow(false)}
         className="absolute top-5 left-5">
             <img src={close} alt="close" width={22} height={22}/>

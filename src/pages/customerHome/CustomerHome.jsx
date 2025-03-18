@@ -39,9 +39,9 @@ const CustomerHome = () => {
                     <NavLink to="wishes">
                         <FaHeart style={{fontSize: "25px", color: "#007bff"}}/>
                    </NavLink>
-                   <button>
+                   <NavLink to="/profile">
                         <FaUser style={{fontSize: "25px", color: "#007bff"}}/>
-                   </button>
+                   </NavLink>
                    <NavLink to="cart">
                         <img src={bucket} alt="bucket"/>
                    </NavLink>
