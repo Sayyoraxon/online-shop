@@ -63,7 +63,7 @@ const SignIn = ({setForgetPassword}) => {
                     {...register('email')} type='text' placeholder={language.PlaceholderEmail} />
                 {errors.email && <p className='h-5 text-[12px] text-red-500 text-left'>{errors.email.message}</p>}
                 <input className='mt-5 p-[14px] w-full h-[45px] bg-white rounded-[10px] border border-[#a1a1a1] text-[14px] outline-none backdrop-blur-[20px]'
-                    {...register('password')} type='password' placeholder={language.PlaceholderPassword} />
+                    {...register('password')} type='password' maxLength={12} placeholder={language.PlaceholderPassword} />
                 {errors.password && <p className='text-[12px] text-red-500 text-left'>{errors.password.message}</p>}
                 <button onClick={()=>setForgetPassword(true)}
                 className='mt-2.5 text-[14px] leading-[17px] text-[#007bff] float-right'>
@@ -78,7 +78,7 @@ const SignIn = ({setForgetPassword}) => {
                         </svg> :
                         language.SinginTitle}
                 </button>
-                <NavLink to="../register" className="mt-5 text-[14px] leading-[17px] text-[#007bff]">
+                <NavLink to="../register" className="mt-5 font-semibold text-[14px] leading-[17px] text-[#007bff]">
                     {language.CreateAccount}
                 </NavLink>
             </div>
