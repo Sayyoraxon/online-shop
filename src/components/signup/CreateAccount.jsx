@@ -87,10 +87,10 @@ const CreateAccount = ({ setStep, setEmail }) => {
       <input type='text' {...register('email')} placeholder={language.EmailAddress}
         className='w-full h-[45px] rounded-[10px] bg-[#fff] backdrop-blur-[20px] border border-[#a1a1a1] px-3 outline-none' />
       {errors.email && <p className='w-full h-5 text-[12px] text-red-500 text-left'>{errors.email.message}</p>}
-      <input type='text' {...register('createPassword')} placeholder={language.CreatePassword}
+      <input maxLength={12} type='text' {...register('createPassword')} placeholder={language.CreatePassword}
         className='w-full h-[45px] rounded-[10px] bg-[#fff] backdrop-blur-[20px] border border-[#a1a1a1] px-3 outline-none' />
       {errors.createPassword && <p className='w-full h-5 text-[12px] text-red-500 text-left'>{errors.createPassword.message}</p>}
-      <input type='text' {...register('confirmPassword')} placeholder={language.ConfirmPassword}
+      <input maxLength={12} type='text' {...register('confirmPassword')} placeholder={language.ConfirmPassword}
         className='w-full h-[45px] rounded-[10px] bg-[#fff] backdrop-blur-[20px] border border-[#a1a1a1] px-3 outline-none' />
       {errors.confirmPassword && <p className='w-full h-5 text-[12px] text-red-500 text-left'>{errors.confirmPassword.message}</p>}
       <button onClick={handleSubmit(onSubmit)} disabled={isLoading}

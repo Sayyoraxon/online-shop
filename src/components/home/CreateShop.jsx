@@ -1,5 +1,5 @@
 import { useState } from "react"
-import logo from "../../assets/icons/logo.svg"
+import logo from "../../assets/icons/logo.png"
 import close from "../../assets/icons/close.svg"
 import CrShopStep1 from "./CrShopStep1"
 import CrShopStep2 from "./CrShopStep2"

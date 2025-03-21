@@ -144,7 +144,8 @@ export const uzbek = {
     NoDont: "Yo'q, qilmang",
     Save: "Saqlash",
     WhoCanSee: "Kim ko'rishi mumkin?",
-    Settings: "Sozlamalar"
+    Settings: "Sozlamalar", 
+    PasswordRegexError: "Parol kuchli bo‘lishi uchun katta harf, kichik harf va raqam qo‘shing."
 }
 
 export const rus = {

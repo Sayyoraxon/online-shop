@@ -92,11 +92,11 @@ function App() {
             <Route path="shop" element={<ShopOnline/>}/>
             <Route path="news" element={<News/>}/>
             <Route path="about" element={<About/>}/>
-            <Route path="detail" element={<Detail/>}/>
+            <Route path="product/:id" element={<Detail/>}/>
             <Route path="wishes" element={<Whishes/>}/>
             <Route path="cart" element={<Cart/>}/>
-            <Route path="profile" element={<CustomerProfile/>}>
-              <Route index element={<CusProfile/>}/>
+            <Route path="profile" element={<CustomerProfile data={data}/>}>
+              <Route index element={<CusProfile data={data}/>}/>
               <Route path="complaint" element={<Complaint/>}/>
               <Route path="chat" element={<CusChatCustomer/>}/>
               <Route path="help" element={<HelpCenter/>}/>

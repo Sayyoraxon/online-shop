@@ -2,19 +2,19 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import fon from "../../assets/image/fon.png"
 
 const ExploreMoree = () => {
-  return (
-    <div className='mt-[40px] mb-[55px]'>
+    return (
+        <div className='mt-[40px] mb-[55px]'>
             <div className='w-full'>
                 <button className='font-medium text-base text-[#007BFF] flex justify-center items-center gap-2 mx-auto'>
-                    Explore More
+                    Koʻproq oʻrganing
                     <FaArrowRightLong />
                 </button>
             </div>
             <div className='relative mt-2'>
-                <img className='mx-auto' src={fon} alt="fon"/>
+                <img className='mx-auto' src={fon} alt="fon" />
             </div>
             <p className='mt-5 font-medium text-[24px] leading-[29px]'>
-                Tranding Products
+                Savdo mahsulotlari
             </p>
             <div className='mt-[30px] flex flex-wrap gap-5'>
                 <div className='relative w-[544px] h-[325px] rounded-[15px] bg-[#D9D9D9] overflow-hidden'>
@@ -29,7 +29,7 @@ const ExploreMoree = () => {
                 </div>
             </div>
         </div>
-  )
+    )
 }
 
 export default ExploreMoree

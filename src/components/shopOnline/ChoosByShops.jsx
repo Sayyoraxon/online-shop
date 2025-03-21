@@ -5,7 +5,7 @@ const ChoosByShops = () => {
   return (
     <div className='w-full mt-[30px]'>
         <p className='font-medium text-[24px] leading-[29px] text-center'>
-            Choose by Shops
+            Do'konlar orqali tanlang
         </p>
         <div className='mt-[30px] w-full flex flex-wrap justify-between items-center gap-5'>
             <div className='w-[262px] h-[80px] py-2.5 px-[15px] rounded-[10px] flex gap-[19px] shadow-md shadow-gray-400'>

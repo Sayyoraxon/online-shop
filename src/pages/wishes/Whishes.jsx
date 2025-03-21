@@ -1,5 +1,5 @@
 import React from 'react'
-import buyze from "../../assets/icons/logo.svg"
+import buyze from "../../assets/icons/logo.png"
 import { FaHeart } from 'react-icons/fa'
 import TopCategories from '../../components/customerHome/TopCategories'
 import Explore from '../../components/customerHome/Explore'

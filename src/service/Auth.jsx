@@ -49,6 +49,16 @@ const AuthService = {
         return res.data
     },
 
+    async forgetPassword(email) {
+        const responce = await API.post('/v1/user/password/reset/', email)
+        return responce.data
+    },
+
+    async resetPassword(data) {
+        const responce = await API.post('/v1/user/password/reset/confirm/', data)
+        return responce.data
+    },
+
     async updateProfile(data) {
 
         const token = localStorage.getItem("token")
@@ -90,6 +100,20 @@ const AuthService = {
             })
         return res.data
 
+    },
+
+    async deleteAccount() {
+
+        const token = localStorage.getItem("token")
+
+        const res = await API.delete('/v1/user/me/delete/',
+            {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                }
+            })
+        return res.data
     },
 
     async createShop(data) {
@@ -154,18 +178,17 @@ const AuthService = {
     async getAllProducts() {
         const token = localStorage.getItem("token")
 
-        const res = await API.get(`/v1/customer/product-list/`,
-            {
-                headers: {
-                    'Authorization': `Bearer ${token}`,
-                    'Content-Type': "application/json",
-                }
-            })
+        const res = await API.get(`/v1/customer/product-list/`)
 
         return res
     },
 
+    async getProduct(slug) {
 
+        const res = await API.get(`/v1/customer/product/${slug}/`)
+
+        return res
+    }
 }
 
 export default AuthService

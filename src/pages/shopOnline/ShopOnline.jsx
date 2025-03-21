@@ -1,6 +1,6 @@
 import React from 'react'
 import brand from "../../assets/image/brand.png"
-import logo from "../../assets/icons/logo.svg"
+import logo from "../../assets/icons/logo.png"
 import { FaStar } from 'react-icons/fa6'
 import CategoryName from '../../components/shopOnline/CategoryName'
 import ChoosByShops from '../../components/shopOnline/ChoosByShops'
@@ -30,7 +30,7 @@ const ShopOnline = () => {
                 </div>
             </div>
             <button className='font-medium text-[20px] text-[#007BFF] underline'>
-                Report this
+                Bu haqda xabar bering
             </button>
         </div>
         <CategoryName/>

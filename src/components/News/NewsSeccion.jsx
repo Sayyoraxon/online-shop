@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import buyze from '../../assets/icons/logo.svg'
+import buyze from '../../assets/icons/logo.png'
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -13,16 +13,16 @@ const NewsSeccion = () => {
             <div className='p-5 w-[262px] h-full rounded-[15px] shadow-md shadow-gray'>
                 <div className=' flex justify-between items-center'>
                     <p className='font-bold text-base'>
-                        Filter
+                        Filtr
                     </p>
                     <button className='w-[60px] h-[25px] rounded-[5px] border border-[#007BFF]'>
-                        Reset
+                        Qayta tiklash
                     </button>
                 </div>
                 <div className='mt-5 bg-[#DCDCDC] w-full h-px'>
                 </div>
                 <p className='mt-[11px] semi-bold text-base'>
-                    Price
+                    Narxi
                 </p>
                 <div className='mt-5 w-full h-2 rounded-[13px] bg-[#FF9C0026] flex'>
                     <div className='relative w-[128px] h-2 rounded-[13px] bg-[#007BFF]'>
@@ -33,11 +33,11 @@ const NewsSeccion = () => {
                     </div>
                 </div>
                 <p className='mt-2 text-[12px]'>
-                    Max price Rs. 30,000.00
+                    Maksimal narx Rs. 30,000.00
                 </p>
                 <div className='mt-2.5 w-[148px] h-[25px] p-2 rounded-[5px] border border-[#007BFF] flex justify-between items-center'>
                     <p className='text-[14px]'>
-                        Lower to higher
+                        Pastdan yuqoriga
                     </p>
                     <button>
                         <IoIosArrowDown style={{ fontSize: "15px", color: "#007BFF" }} />
@@ -47,7 +47,7 @@ const NewsSeccion = () => {
                 </div>
                 <div className='mt-2.5 w-full p-2 flex justify-between items-center'>
                     <p className='font-bold text-base'>
-                        Categories
+                        Kategoriyalar
                     </p>
                     <button onClick={() => setCategories(!categories)}>
                         {!categories ? <IoIosArrowForward style={{ fontSize: "15px", color: "#007BFF" }} /> :
@@ -89,7 +89,7 @@ const NewsSeccion = () => {
 
                 <div className='mt-2.5 w-full p-2 flex justify-between items-center'>
                     <p className='font-bold text-base'>
-                        City
+                        Shahar
                     </p>
                     <button onClick={() => setCity(!city)}>
                         {!city ? <IoIosArrowForward style={{ fontSize: "15px", color: "#007BFF" }} /> :

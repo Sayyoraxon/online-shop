@@ -1,10 +1,32 @@
 import React from 'react'
 import useStore from '../../store/useStore'
 import { IoClose } from 'react-icons/io5'
+import AuthService from '../../service/Auth'
+import {loggedIn, logOut} from "../../helpers/storage"
+import { useNavigate } from 'react-router'
+import { useDispatch } from 'react-redux'
+import { logout } from '../../slice/auth'
 
 const DeleteAccount = ({ setDeleteAccount, setMainWindow }) => {
 
     const { language } = useStore()
+
+    const navigate = useNavigate()
+
+    const dispatch = useDispatch()
+
+    const deleteAccount = async() => {
+        try{
+            const res = await AuthService.deleteAccount()
+            loggedIn(false)
+            dispatch(logout())
+            logOut()
+            navigate("/")
+            console.log(res)
+        }catch(err){
+            console.log(err)
+        }
+    }
 
     return (
         <div className='relative w-[644px] h-[256px] pt-10 px-[50px] rounded-[15px] shadow-md shadow-gray-400 bg-white'>
@@ -22,7 +44,8 @@ const DeleteAccount = ({ setDeleteAccount, setMainWindow }) => {
                 {language.AreYouSureDelete}
             </p>
             <div className='mt-[30px] w-full flex gap-5'>
-                <button className='mt-2.5 w-full h-[45px] rounded-[10px] bg-[#007bff] font-bold text-base text-white'>
+                <button onClick={deleteAccount}
+                 className='mt-2.5 w-full h-[45px] rounded-[10px] bg-[#007bff] font-bold text-base text-white'>
                     {language.YesOfCourse}
                 </button>
                 <button onClick={() => {

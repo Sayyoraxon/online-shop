@@ -1,6 +1,6 @@
 import { FaHeart, FaUser } from "react-icons/fa";
 import { NavLink, Outlet } from 'react-router'
-import logo from "../../assets/icons/logo.svg"
+import logo from "../../assets/icons/logo.png"
 import bucket from "../../assets/icons/savat.svg"
 import Footer from '../../components/footer/Footer'
 

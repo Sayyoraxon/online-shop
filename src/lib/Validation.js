@@ -30,17 +30,20 @@ export const useLoginSchema = () => {
   const schemaResetPassword = useMemo(() => {
     return z
       .object({
-        newPassword: z.string().min(6, {
-          message: language.PasswordError,
+        newPassword: z.string()
+        .length(6, {
+          message: "Tasdiqlash kodi 6 ta raqamdan iborat bo‘lishi kerak.",
+        })
+        .regex(/^\d{6}$/, {
+          message: "Tasdiqlash kodi faqat raqamlardan iborat bo‘lishi kerak.",
         }),
         confirmPassword: z.string().min(6, {
-          message: language.ConfirmPasswordError,
-        }),
+          message: language.PasswordError,
+        }).regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/, {
+          message: language.PasswordRegexError, // Maxsus xabarni qo‘shish
+        })
       })
-      .refine((data) => data.newPassword === data.confirmPassword, {
-        message: language.ConfirmPasswordErr,
-        path: ["confirmPassword"],
-      });
+    
   }, [language]);
 
   const schemaSignUp = useMemo(() => {
@@ -51,6 +54,8 @@ export const useLoginSchema = () => {
         }),
         createPassword: z.string().min(6, {
           message: language.PasswordError,
+        }).regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/, {
+          message: language.PasswordRegexError, // Maxsus xabarni qo‘shish
         }),
         confirmPassword: z.string().min(6, {
           message: language.ConfirmPasswordError,

@@ -3,10 +3,10 @@ import { AiOutlineDelete } from "react-icons/ai";
 const Cart = () => {
     return (
         <div className="pb-10">
-            <p className="w-full my-28 font-medium text-[42px] text-center">
+            {/* <p className="w-full my-28 font-medium text-[42px] text-center">
                 Savatchangiz bo'sh
-            </p>
-            {/* <div className='flex gap-5 justify-between'>
+            </p> */}
+            <div className='flex gap-5 justify-between'>
                 <div className='w-[800px] rounded-[25px] border bg-white border-[#efefef] p-5'>
                     <p className='mb-3 font-medium text-2xl'>
                         Savatda <span className='font-normal text-[18px] text-gray-500'>1 ta tovar</span>
@@ -75,7 +75,7 @@ const Cart = () => {
                         Buyurtma berish
                     </button>
                 </div>
-            </div> */}
+            </div>
         </div>
     )
 }

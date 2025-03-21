@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import logo from "../../assets/icons/logo.svg"
+import logo from "../../assets/icons/logo.png"
 import homelogo from "../../assets/icons/homelogo.svg"
 import productlogo from "../../assets/icons/productlogo.svg"
 import customerslogo from "../../assets/icons/customerslogo.svg"

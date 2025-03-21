@@ -27,9 +27,9 @@ const CustomerMain = ({products}) => {
         </div>
         <TopCategories/>
         <DepartmentStores products={products}/>
-        <ChooseByShops/>
-        <MostPopular/>
-        <BestDeals/>
+        <ChooseByShops products={products}/>
+        <MostPopular products={products}/>
+        <BestDeals products={products}/>
         <Explore/>
     </div>
   )

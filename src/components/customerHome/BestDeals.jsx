@@ -1,30 +1,30 @@
 import React from 'react'
-import buyze from '../../assets/icons/logo.svg'
+import buyze from '../../assets/icons/logo.png'
 
 const BestDeals = () => {
-  return (
-    <div className='w-full mt-[30px]'>
+    return (
+        <div className='w-full mt-[30px]'>
             <p className='font-medium text-[24px] leading-[29px]'>
-                Today Best Deals For You
+                Bugun siz uchun eng yaxshi takliflar
             </p>
-            <div className='mt-[30px] flex gap-2.5'>
-                <button className='w-[120px] h-[35px] rounded-[100px] bg-[#AFDEFF] font-medium text-base hover:bg-[#007BFF] hover:text-white'>
-                    Search Tags
+            <div className='mt-[30px] flex gap-2.5 flex-wrap'>
+                <button className='w-[160px] h-[35px] rounded-[100px] bg-[#AFDEFF] font-medium text-base hover:bg-[#007BFF] hover:text-white'>
+                    Teglarni qidirish
                 </button>
-                <button className='w-[120px] h-[35px] rounded-[100px] bg-[#AFDEFF] font-medium text-base hover:bg-[#007BFF] hover:text-white'>
-                    Search Tags
+                <button className='w-[160px] h-[35px] rounded-[100px] bg-[#AFDEFF] font-medium text-base hover:bg-[#007BFF] hover:text-white'>
+                    Teglarni qidirish
                 </button>
-                <button className='w-[120px] h-[35px] rounded-[100px] bg-[#AFDEFF] font-medium text-base hover:bg-[#007BFF] hover:text-white'>
-                    Search Tags
+                <button className='w-[160px] h-[35px] rounded-[100px] bg-[#AFDEFF] font-medium text-base hover:bg-[#007BFF] hover:text-white'>
+                    Teglarni qidirish
                 </button>
-                <button className='w-[120px] h-[35px] rounded-[100px] bg-[#AFDEFF] font-medium text-base hover:bg-[#007BFF] hover:text-white'>
-                    Search Tags
+                <button className='w-[160px] h-[35px] rounded-[100px] bg-[#AFDEFF] font-medium text-base hover:bg-[#007BFF] hover:text-white'>
+                    Teglarni qidirish
                 </button>
-                <button className='w-[120px] h-[35px] rounded-[100px] bg-[#AFDEFF] font-medium text-base hover:bg-[#007BFF] hover:text-white'>
-                    Search Tags
+                <button className='w-[160px] h-[35px] rounded-[100px] bg-[#AFDEFF] font-medium text-base hover:bg-[#007BFF] hover:text-white'>
+                    Teglarni qidirish
                 </button>
-                <button className='w-[120px] h-[35px] rounded-[100px] bg-[#AFDEFF] font-medium text-base hover:bg-[#007BFF] hover:text-white'>
-                    Search Tags
+                <button className='w-[160px] h-[35px] rounded-[100px] bg-[#AFDEFF] font-medium text-base hover:bg-[#007BFF] hover:text-white'>
+                    Teglarni qidirish
                 </button>
             </div>
             <div className='mt-[30px] w-full flex flex-wrap justify-between items-center gap-5'>
@@ -166,7 +166,7 @@ const BestDeals = () => {
                 </div>
             </div>
         </div>
-  )
+    )
 }
 
 export default BestDeals

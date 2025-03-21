@@ -7,13 +7,13 @@ const ForgetPassword = () => {
 
     const [step, setStep] = useState(1)
 
+    const [email, setEmail] = useState("")
+
   return (
     <>
     {step === 1 ?
-    <ForgetPasswordS1 setStep={setStep}/> :
-    step === 2 ?
-    <ForgetPasswordS2 setStep={setStep}/> :
-    <ResetPassword/>}
+    <ForgetPasswordS1 email={email} setEmail={setEmail} setStep={setStep}/> :
+    <ResetPassword email={email}/>}
     </>
   )
 }
