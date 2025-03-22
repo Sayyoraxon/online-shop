@@ -23,7 +23,7 @@ const CustomerProfile = ({ data }) => {
         {logoutWindow && <Logout setLogoutWindow={setLogoutWindow} />}
         <div className="absolute px-6 top-0 w-full h-14 lg:hidden border-b flex justify-between items-center gap-5">
           <NavLink to="/">
-            <img src={logo} alt="logo" width={100} />
+            <img src={logo} alt="logo" width={70} />
           </NavLink>
           <div className="flex items-center gap-5">
             <button className="mr-5" onClick={() => setMenu(!menu)}>
@@ -60,9 +60,9 @@ const CustomerProfile = ({ data }) => {
             </div>}
         </div>
         <div className='h-screen min-w-[200px] overflow-hidden lg:block hidden'>
-          <div className='px-[27px] pt-[26px] pb-40 bg-[#4B4B4B]'>
+          <div className='px-[27px] pb-28 bg-[#4B4B4B]'>
             <NavLink to="/">
-              <img src={logo} alt="logo" />
+              <img src={logo} alt="logo" width={280} />
             </NavLink>
             <ul className='px-4 mt-[59px]'>
               <li>
@@ -95,7 +95,7 @@ const CustomerProfile = ({ data }) => {
             <NavLink to="/profile" className='flex gap-3 mt-4 items-center'>
               <div className='w-11 h-11 rounded-full bg-[#d9d9d9]'>
                 {data && data.profile_picture &&
-                  <img className='w-11 h-11 object-cover rounded-full' src={data.profile_picture} alt='user' />}
+                  <img className='w-11 h-11 object-cover rounded-full' src={`https://buyze.uz${data.profile_picture}`} alt='user' />}
               </div>
               <div>
                 <div>

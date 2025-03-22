@@ -24,6 +24,8 @@ const ProductDetail = () => {
     }
   }
 
+  console.log(product)
+
   useEffect(()=>{
     getProduct()
   }, [id])

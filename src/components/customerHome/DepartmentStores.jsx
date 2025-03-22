@@ -17,7 +17,7 @@ const DepartmentStores = ({ products }) => {
                     products.map((product) => (
                         <NavLink to={`product/${product.slug}`} key={product.slug} className='w-[262px] h-[456px] rounded-[10px] flex flex-col'>
                             <div className='w-[262px] h-[262px] rounded-md flex justify-center items-center bg-slate-100'>
-                                <img src={buyze} alt="logo" width={162} />
+                                <img src={`https://buyze.uz${product.image_url_list[0]}`} alt="logo" width={162} />
                             </div>
                             <p className='mt-[14px] font-medium text-[18px] leading-[21px]'>
                                 {product.name}

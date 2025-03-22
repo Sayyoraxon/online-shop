@@ -15,6 +15,8 @@ const AddProduct = ({ setAddProduct, slug }) => {
 
     const [data, setData] = useState()
 
+    const [productSlug, setProductSlug] = useState("")
+
     const [text, setText] = useState("product")
 
     const [open, setOpen] = useState(false)
@@ -137,8 +139,8 @@ const AddProduct = ({ setAddProduct, slug }) => {
                             </button>
                         </div>
                     </>}
-                {text === "photo" && <AddPhoto slug={slug}/>}
-                {text === "video" && <AddVideo data={data} subCategory={subCategory} slug={slug}  setText={setText}/>}
+                {text === "photo" && <AddPhoto slug={slug} productSlug={productSlug} setAddProduct={setAddProduct}/>}
+                {text === "video" && <AddVideo data={data} subCategory={subCategory} slug={slug}  setText={setText}  setProductSlug={setProductSlug}/>}
             </div>
         </div>
     )

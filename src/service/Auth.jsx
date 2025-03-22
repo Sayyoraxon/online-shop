@@ -73,14 +73,26 @@ const AuthService = {
         return responce.data
     },
 
-    async updatePhoto(data) {
+    async updateUser(data) {
 
         const token = localStorage.getItem("token")
+
+        const responce = await API.patch('/v1/user/user-update/', data,
+            {
+                headers: {
+                    'Authorization': `Bearer ${token}`, // Bearer Tokenni headerda yuboramiz
+                    'Content-Type': 'application/json',
+                }
+            })
+        return responce.data
+    },
+
+    async updatePhoto(data) {
+
 
         const responce = await API.put('/v1/user/user-update-photo/', data,
             {
                 headers: {
-                    'Authorization': `Bearer ${token}`, // Bearer Tokenni headerda yuboramiz
                     'Content-Type': 'multipart/form-data',
                 }
             })
@@ -146,6 +158,22 @@ const AuthService = {
         return res
     },
 
+    async productImageCreate(data) {
+
+        const token = localStorage.getItem("token")
+
+        const res = await API.post('/v1/shopper/product-image-create/', data,
+            {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': "multipart/form-data",
+                }
+            })
+
+        return res
+
+    },
+
     async getProducts() {
         const token = localStorage.getItem("token")
         const id = localStorage.getItem("shopId")
@@ -176,7 +204,6 @@ const AuthService = {
     },
 
     async getAllProducts() {
-        const token = localStorage.getItem("token")
 
         const res = await API.get(`/v1/customer/product-list/`)
 

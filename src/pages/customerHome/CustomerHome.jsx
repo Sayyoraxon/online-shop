@@ -13,7 +13,7 @@ const CustomerHome = () => {
             <div className='max-w-[1148px] mx-auto px-5'>
                 <div className='w-full flex justify-between items-center mb-[27px]'>
                     <NavLink to="/">
-                        <img src={logo} alt="logo" width={146}/>
+                        <img src={logo} alt="logo" width={120}/>
                     </NavLink>
                     
                     <div className='flex gap-10'>

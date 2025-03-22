@@ -6,25 +6,25 @@ const Customerdiv = () => {
         <div className='mt-[30px] px-[26px]'>
             <div className='w-full text-right'>
                 <input className='w-[345px] h-[40px] rounded-[9px] border border-[#6f6f6f] px-[20px] font-medium text-base text-[#636363]'
-                    placeholder='Search Customer' />
+                    placeholder='Mijozni qidirish' type="search" />
             </div>
 
             <div className='mt-8 w-full font-medium text-[14px] leading-4 text-black opacity-60'>
                 <div className='px-5 w-full flex'>
                     <p className='w-2/12'>
-                        Customer Name
+                        Mijoz ismi
                     </p>
                     <p className='w-2/12'>
-                        Customer Email
+                        Mijoz emaili
                     </p>
                     <p className='w-2/12'>
-                        Orders Count
+                        Buyurtmalar soni
                     </p>
                     <p className='w-3/12'>
-                        Successful Deliveries
+                        Muvaffaqiyatli yetkazib berish
                     </p>
                     <p className='w-2/12'>
-                        Total income
+                    Umumiy daromad
                     </p>
 
                 </div>

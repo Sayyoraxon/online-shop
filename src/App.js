@@ -54,6 +54,7 @@ function App() {
     try{
       const res = await AuthService.getAllProducts()
       setAllProducts(res.data.results)
+      console.log(res)
     }catch(err){
       console.log(err)
     }
