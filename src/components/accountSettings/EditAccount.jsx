@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import AuthService from '../../service/Auth';
 import { useDispatch, useSelector } from 'react-redux';
-import { signUserFailure, signUserStart } from '../../slice/auth';
+import { deleteFailure, signUserFailure, signUserStart, updadeUserSuccess } from '../../slice/auth';
 import { IoClose } from 'react-icons/io5';
 
 const EditAccount = ({ setEditAccount, setMainWindow }) => {
@@ -41,11 +41,16 @@ const EditAccount = ({ setEditAccount, setMainWindow }) => {
                 zip_code: data.zipCode
             })
             console.log(res)
-            // dispatch(updateUserSuccess())
+            dispatch(updadeUserSuccess())
         } catch (err) {
             console.log(err)
             dispatch(signUserFailure(err.response.data))
         }
+        
+
+        setTimeout(() => {
+            dispatch(deleteFailure());
+        }, 3000);
     };
 
     return (

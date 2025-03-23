@@ -4,7 +4,7 @@ import { useLoginSchema } from '../../lib/Validation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import AuthService from '../../service/Auth'
-import { registerUserFailure, signUserStart, registerUserSuccess } from '../../slice/auth'
+import { registerUserFailure, signUserStart, registerUserSuccess, deleteFailure } from '../../slice/auth'
 import { useDispatch, useSelector } from 'react-redux'
 import { token } from '../../helpers/storage'
 
@@ -49,6 +49,9 @@ const CreateAccount = ({ setStep, setEmail }) => {
       console.log(err)
       dispatch(registerUserFailure(err.response.data))
     }
+    setTimeout(() => {
+      dispatch(deleteFailure());
+  }, 3000);
   };
 
   const handleClick = (e) => {

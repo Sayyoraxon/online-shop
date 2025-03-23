@@ -4,10 +4,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { NavLink, useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import { signUserFailure, signUserStart, signUserSuccess } from '../../slice/auth'
+import { deleteFailure, signUserFailure, signUserStart, signUserSuccess } from '../../slice/auth'
 
 import AuthService from '../../service/Auth';
-import { setItem } from '../../helpers/storage';
+import { loggedIn, setItem } from '../../helpers/storage';
 
 
 const SignIn = ({setForgetPassword}) => {
@@ -38,12 +38,17 @@ const SignIn = ({setForgetPassword}) => {
             dispatch(signUserSuccess(res))
             navigate("/")
             setItem(res.access, true)
+            loggedIn(true)
             console.log(res)
         }
         catch(err){
             dispatch(signUserFailure(err.response.data.message))
             console.log(err.response.data)
         }
+
+        setTimeout(() => {
+            dispatch(deleteFailure());
+        }, 3000);
     };
 
     

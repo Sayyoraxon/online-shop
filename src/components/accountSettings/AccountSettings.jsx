@@ -3,7 +3,7 @@ import useStore from '../../store/useStore'
 import { IoClose } from 'react-icons/io5'
 import EditAccount from './EditAccount'
 import DeleteAccount from './DeleteAccount'
-import AccountManagement from './AccountManagement'
+//import AccountManagement from './AccountManagement'
 
 const AccountSettings = ({setAccount}) => {
 
@@ -11,7 +11,6 @@ const AccountSettings = ({setAccount}) => {
     const [mainWindow, setMainWindow] = useState(true)
     const [editAccount, setEditAccount] = useState(false)
     const [deleteAccount, setDeleteAccount] = useState(false)
-    const [accountManagement, setAccountManagement] = useState(false)
 
     return (
         <div className='fixed h-screen w-full top-0 left-0 backdrop-blur-md flex justify-center items-center'>
@@ -37,12 +36,6 @@ const AccountSettings = ({setAccount}) => {
                         className='mt-2.5 w-full h-[45px] rounded-[10px] border border-[#007bff] font-bold text-base'>
                         {language.DeleteAccount}
                     </button>
-                    <button onClick={() => {
-                        setAccountManagement(true)
-                        setMainWindow(false)
-                    }} className='mt-2.5 w-full h-[45px] rounded-[10px] border border-[#007bff] font-bold text-base'>
-                        {language.AccountManagement}
-                    </button>
                 </div>}
             {
                 deleteAccount &&
@@ -52,11 +45,6 @@ const AccountSettings = ({setAccount}) => {
             {
                 editAccount && 
                 <EditAccount setEditAccount={setEditAccount} setMainWindow={setMainWindow}/>
-            }
-
-            {
-                accountManagement && 
-                <AccountManagement setAccountManagement={setAccountManagement} setMainWindow={setMainWindow}/>
             }
 
         </div>

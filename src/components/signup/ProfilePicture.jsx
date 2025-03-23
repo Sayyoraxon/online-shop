@@ -3,7 +3,7 @@ import useStore from '../../store/useStore'
 import upload from "../../assets/image/upload.png"
 import AuthService from '../../service/Auth';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateUserFailed, signUserStart } from '../../slice/auth';
+import { updateUserFailed, signUserStart, deleteFailure } from '../../slice/auth';
 import { useNavigate } from 'react-router';
 import { loggedIn } from '../../helpers/storage';
 
@@ -46,6 +46,10 @@ const ProfilePicture = ({setStep}) => {
             console.error(err);
             dispatch(updateUserFailed(err.response.data))
         }
+
+        setTimeout(() => {
+            dispatch(deleteFailure());
+        }, 3000);
     };
 
     console.log(file)

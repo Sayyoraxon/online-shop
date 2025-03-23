@@ -26,7 +26,6 @@ export const authSlice = createSlice({
             state.error = action.payload
         },
         confirmEmail: (state) => {
-            state.isLoading = true
             state.error = null
         },
         reisterUserStart: (state) => {
@@ -43,7 +42,7 @@ export const authSlice = createSlice({
         },
         logout: (state)=>{
             state.user = null
-            state.loggedIn = true
+            state.loggedIn = false
         },
         updadeUserSuccess: (state)=>{
             state.isLoading = false
@@ -51,11 +50,14 @@ export const authSlice = createSlice({
         updateUserFailed: (state, action) => {
             state.isLoading = false
             state.error = action.payload
+        },
+        deleteFailure: (state) => {
+            state.error = null
         }
     }
 })
 
 
-export const {signUserStart, signUserSuccess, signUserFailure, reisterUserStart, registerUserSuccess, registerUserFailure, logout, updateUserSuccess, updateUserFailed, confirmEmail} = authSlice.actions
+export const {signUserStart, signUserSuccess, signUserFailure, reisterUserStart, registerUserSuccess, registerUserFailure, logout, updadeUserSuccess, updateUserFailed, confirmEmail, deleteFailure} = authSlice.actions
 
 export default authSlice.reducer

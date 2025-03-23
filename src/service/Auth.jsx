@@ -215,6 +215,20 @@ const AuthService = {
         const res = await API.get(`/v1/customer/product/${slug}/`)
 
         return res
+    },
+
+    async commentCreate(data) {
+        const token = localStorage.getItem("token")
+
+        const res = await API.put(`/v1/customer/comment-create`, data,
+            {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': "application/json",
+                }
+            })
+
+        return res
     }
 }
 

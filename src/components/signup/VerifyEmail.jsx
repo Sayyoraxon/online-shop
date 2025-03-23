@@ -3,7 +3,7 @@ import useStore from '../../store/useStore'
 import e_mail from "../../assets/icons/email .svg"
 import back from "../../assets/icons/back.svg"
 import { useDispatch, useSelector } from 'react-redux'
-import { registerUserFailure, signUserStart, registerUserSuccess } from '../../slice/auth'
+import { registerUserFailure, signUserStart, registerUserSuccess, deleteFailure } from '../../slice/auth'
 import AuthService from '../../service/Auth'
 
 const VerifyEmail = ({ email, setStep }) => {
@@ -28,6 +28,10 @@ const VerifyEmail = ({ email, setStep }) => {
       dispatch(registerUserFailure(err.response.data.message))
       console.log(err)
     }
+
+    setTimeout(() => {
+      dispatch(deleteFailure());
+    }, 3000);
 
   }
 
@@ -87,7 +91,7 @@ const VerifyEmail = ({ email, setStep }) => {
           </svg> :
           language.Submit}
       </button>
-      <button onClick={()=>{
+      <button onClick={() => {
         setStep(1)
         dispatch(registerUserFailure(null))
       }}

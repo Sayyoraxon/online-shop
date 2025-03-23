@@ -1,6 +1,6 @@
 import logo from "../../assets/icons/logo.png"
 import homelogo from "../../assets/icons/complaint.svg"
-import customerslogo from "../../assets/icons/help.svg"
+import customerslogo from "../../assets/icons/clipboard.svg"
 import cuschatlogo from "../../assets/icons/cuschatwhite.svg"
 import logout from "../../assets/icons/logout.svg"
 import { NavLink, Outlet, useNavigate } from 'react-router'
@@ -83,7 +83,7 @@ const CustomerProfile = ({ data }) => {
                 <NavLink to="help"
                   className="mt-8 flex items-center gap-5 font-medium text-[14px] text-white leading-4">
                   <img src={customerslogo} alt="logo" />
-                  {language.HelpCenter}
+                  Buyurtmalarim
                 </NavLink>
               </li>
             </ul>

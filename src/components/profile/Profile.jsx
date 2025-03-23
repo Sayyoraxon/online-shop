@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import useStore from '../../store/useStore'
+import AccountSettings from '../accountSettings/AccountSettings'
 
 const ProfileDiv = ({data}) => {
 
     const {language} = useStore()
+
+    const [account, setAccount] = useState(false)
   return (
     <div className='mt-10 pl-[21px] w-full'>
+        {account && <AccountSettings setAccount={setAccount}/>}
         <div className='w-full flex justify-between flex-wrap gap-3 items-start'>
             <div>
                 <div className='w-[250px] h-[250px] rounded-[10px] bg-[#d9d9d9] overflow-hidden'>
-                    <img className='w-full h-full object-cover' src={`http://167.172.107.65:8000${data.profile_picture}`} alt="picturer"/>
+                    {data && data.profile_picture !== null && <img className='w-full h-full object-cover' src={`http://167.172.107.65:8000${data.profile_picture}`} alt="picturer"/>}
                 </div>
                 <p className='mt-6 font-medium text-[14px] leading-4 text-[#3DB39E] text-center'>
                     {language.VerifiedAccount}
@@ -52,6 +56,10 @@ const ProfileDiv = ({data}) => {
                 <p className='mt-1 font-medium text-[20px] leading-6'>
                     {data.city}
                 </p>
+
+                <button onClick={()=>setAccount(true)} className='mt-32 w-[250px] h-[45px] rounded-[10px] bg-[#007bff] font-semibold text-base text-white'>
+                    {language.Settings}
+                </button>
             </div>
             <div className='w-[300px] h-[625px] p-5 rounded-[10px] bg-[#FBF9F9] shadow-inner'>
                 <p className='font-medium text-[20px] leading-6 text-center'>

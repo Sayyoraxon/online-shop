@@ -1,34 +1,35 @@
 import React, { useEffect, useState } from 'react'
 import buyze from "../../assets/icons/logo.png"
 import { FaStar } from 'react-icons/fa6'
-import chat from "../../assets/icons/chat.svg"
+import chat from "../../assets/icons/shopping-cart.svg"
 import AuthService from '../../service/Auth'
 import { useParams } from 'react-router'
 
 const ProductDetail = () => {
 
-  const {id} = useParams()
+  const { id } = useParams()
 
   console.log(id)
 
   const [product, setProduct] = useState()
 
 
-  const getProduct = async() => {
-    try{
+  const getProduct = async () => {
+    try {
       const res = await AuthService.getProduct(id)
       console.log(res)
       setProduct(res.data.results.product)
-    }catch(err){
+    } catch (err) {
       console.log(err)
     }
   }
 
   console.log(product)
 
-  useEffect(()=>{
+  useEffect(() => {
     getProduct()
   }, [id])
+
 
 
   return (
@@ -73,7 +74,7 @@ const ProductDetail = () => {
           </p>
           <div>
             <p className='font-medium text-base'>
-            Mahsulot reytingi
+              Mahsulot reytingi
             </p>
             <div className='mt-2.5 flex gap-2.5'>
               <FaStar style={{ fontSize: "25px", color: "#FFC05C" }} />
@@ -91,12 +92,17 @@ const ProductDetail = () => {
               {product && product.description}
             </p>
           </div>
-          <button className='w-[356px] h-[74px] rounded-md bg-[#FFB644] flex justify-center items-center gap-[25px]'>
-            <p className='font-medium text-[24px] text-white'>
-            xaridor suhbati
-            </p>
-            <img src={chat} alt="chat" />
-          </button>
+          <div className='flex flex-wrap items-center gap-3'>
+            <button className='w-[356px] h-[74px] rounded-md bg-[#FFB644] flex justify-center items-center gap-[25px]'>
+              <p className='font-medium text-[24px] text-white'>
+                Savatga qo'shish
+              </p>
+              <img src={chat} alt="chat" />
+            </button>
+            <button className='font-medium text-base text-[#007bff] hover:underline'>
+              Mahsulot haqida xabar berish
+            </button>
+          </div>
         </div>
       </div>
 
@@ -166,7 +172,7 @@ const ProductDetail = () => {
 
       <div>
         <p className='font-medium text-[24px] leading-[29px]'>
-        Savdo mahsulotlari
+          Savdo mahsulotlari
         </p>
         <div className='mt-[30px] flex flex-wrap gap-5'>
           <div className='relative w-[544px] h-[325px] rounded-[15px] bg-[#D9D9D9] overflow-hidden'>
@@ -181,7 +187,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
-      
+
     </div>
   )
 }

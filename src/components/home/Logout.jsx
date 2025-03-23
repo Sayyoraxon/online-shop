@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router"
 import close from "../../assets/icons/close.svg"
 import useStore from "../../store/useStore"
-import { logOut } from "../../helpers/storage"
+import { loggedIn, logOut } from "../../helpers/storage"
 import { useDispatch } from "react-redux"
 import { logout } from "../../slice/auth"
 
