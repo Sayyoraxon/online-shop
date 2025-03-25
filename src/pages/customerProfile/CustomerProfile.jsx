@@ -1,5 +1,5 @@
 import logo from "../../assets/icons/logo.png"
-import homelogo from "../../assets/icons/complaint.svg"
+import help from "../../assets/icons/help.svg"
 import customerslogo from "../../assets/icons/clipboard.svg"
 import cuschatlogo from "../../assets/icons/cuschatwhite.svg"
 import logout from "../../assets/icons/logout.svg"
@@ -43,7 +43,7 @@ const CustomerProfile = ({ data }) => {
               <ul onClick={() => setMenu(false)}>
                 <li>
                   <NavLink to="complaint">
-                    {language.Complaint}
+                    Buyurtmalarim
                   </NavLink>
                 </li>
                 <li className="my-4">
@@ -60,17 +60,22 @@ const CustomerProfile = ({ data }) => {
             </div>}
         </div>
         <div className='h-screen min-w-[200px] overflow-hidden lg:block hidden'>
-          <div className='px-[27px] pb-28 bg-[#4B4B4B]'>
+          <div className='px-[27px] h-[65vh] bg-[#4B4B4B]'>
             <NavLink to="/">
-              <img src={logo} alt="logo" width={280} />
+              <img src={logo} alt="logo" width={260} />
             </NavLink>
             <ul className='px-4 mt-[59px]'>
               <li>
-                <NavLink to="complaint"
+              <NavLink to="complaint"
+                  className="mt-8 flex items-center gap-5 font-medium text-[14px] text-white leading-4">
+                  <img src={customerslogo} alt="logo" />
+                  Buyurtmalarim
+                </NavLink>
+                {/* <NavLink to="complaint"
                   className="flex items-center gap-5 font-medium text-[14px] text-white leading-4">
                   <img src={homelogo} alt="logo" />
                   {language.Complaint}
-                </NavLink>
+                </NavLink> */}
               </li>
               <li>
                 <NavLink to="chat"
@@ -82,13 +87,13 @@ const CustomerProfile = ({ data }) => {
               <li>
                 <NavLink to="help"
                   className="mt-8 flex items-center gap-5 font-medium text-[14px] text-white leading-4">
-                  <img src={customerslogo} alt="logo" />
-                  Buyurtmalarim
+                  <img src={help} alt="logo" />
+                  Yordam markazi
                 </NavLink>
               </li>
             </ul>
           </div>
-          <div className='bg-[#585656] h-full p-[30px]'>
+          <div className='bg-[#585656] h-[35vh] p-[30px]'>
             <p className='font-semibold text-[10px] leading-3 text-white'>
               PROFIL
             </p>
@@ -115,7 +120,7 @@ const CustomerProfile = ({ data }) => {
             </button>
           </div>
         </div>
-        <div className='lg:mt-0 mt-8 w-full h-screen overflow-scroll'>
+        <div className='lg:pt-0 pt-8 w-full h-screen overflow-scroll'>
           <Outlet />
         </div>
 

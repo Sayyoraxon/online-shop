@@ -24,6 +24,7 @@ import Complaint from "./components/customerProfile/Complaint";
 import CusChatCustomer from "./components/customerProfile/CusChat";
 import HelpCenter from "./components/customerProfile/HelpCenter";
 import CusProfile from "./components/customerProfile/CusProfile";
+import Comments from "./pages/comments/Comments";
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
     try{
       const res = await AuthService.getProducts()
       setProducts(res.data)
+      console.log(res.data)
     }catch(err){
       console.log(err)
     }
@@ -76,7 +78,7 @@ function App() {
 
 
   return (
-    <div>
+    <div >
       <Routes>
         {data && data.account_type === "shopper"
           ?
@@ -86,6 +88,7 @@ function App() {
             <Route path="/customers" element={<Customers data={data} />} />
             <Route path="/cuschat" element={<CusChat data={data} />} />
             <Route path="/profile" element={<Profile data={data} />} />
+            <Route path="product/:id/comments" element={<Comments/>}/>
           </Route>
           :
           <Route path="/" element={<CustomerHome />}>

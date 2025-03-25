@@ -89,10 +89,12 @@ const AuthService = {
 
     async updatePhoto(data) {
 
+        const token = localStorage.getItem("token")
 
         const responce = await API.put('/v1/user/user-update-photo/', data,
             {
                 headers: {
+                    'Authorization': `Bearer ${token}`,
                     'Content-Type': 'multipart/form-data',
                 }
             })
@@ -189,6 +191,22 @@ const AuthService = {
         return res
     },
 
+    async getProductShopper(slug) {
+
+        const token = localStorage.getItem("token")
+
+        const res = await API.get(`/v1/shopper/product/${slug}/`,
+        {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': "application/json",
+            }
+        }
+        )
+
+        return res
+    },
+
     async updateProduct(slug, data) {
         const token = localStorage.getItem("token")
 
@@ -220,7 +238,7 @@ const AuthService = {
     async commentCreate(data) {
         const token = localStorage.getItem("token")
 
-        const res = await API.put(`/v1/customer/comment-create`, data,
+        const res = await API.post(`/v1/customer/comment-create`, data,
             {
                 headers: {
                     'Authorization': `Bearer ${token}`,

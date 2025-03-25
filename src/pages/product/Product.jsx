@@ -9,6 +9,7 @@ const Product = ({products}) => {
 
   const [category, setCategory] = useState(false)
   const [addProduct, setAddProduct] = useState(false)
+  const [search, setSearch] = useState("")
 
   const {language} = useStore()
 
@@ -20,16 +21,16 @@ const Product = ({products}) => {
           {language.Products}
         </p>
         <div className='mt-[29px] flex gap-10 justify-end items-end'>
-          <input type="search" placeholder={language.SearchProduct}
+          <input onChange={(e)=>setSearch(e.target.value)} type="search" placeholder={language.SearchProduct}
             className='w-[335px] h-10 px-5 rounded-[9px] border border-[#6f6f6f] text-base leading-[19px] text-[#6f6f6f]' />
-          <div className='relative flex px-5 justify-between gap-5 items-center h-[42px] rounded-[9px] border border-[#6f6f6f]'>
+          <div className='relative flex px-5 justify-between gap-5 items-center h-[42px] rounded-[9px] border border-[#6f6f6f] bg-white'>
             <p className='font-medium text-base leading-[19px] text-[#6f6f6f]'>
               {language.FilterByCategory}
             </p>
             <button onClick={() => setCategory(!category)}>
               <img src={vector} alt="vector" width={15} height={7} />
             </button>
-            {category && <div className="absolute left-0 top-12 rounded-md p-2 shadow-md bg-white">
+            {category && <div className="absolute left-0 top-12 rounded-md p-2 shadow-md bg-white z-30">
               <p className="p-1 border-b text-[#6f6f6f]">
               {language.FilterByCategory}
               </p>
@@ -47,7 +48,7 @@ const Product = ({products}) => {
             <img src={plus} alt="ALT" />
           </button>
         </div>
-        <Products products={products}/>
+        <Products products={products} search={search}/>
       </div>
     </>
   )

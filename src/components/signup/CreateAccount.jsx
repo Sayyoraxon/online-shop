@@ -67,7 +67,7 @@ const CreateAccount = ({ setStep, setEmail }) => {
     setAccounttype(e.name)
   }
 
- 
+ console.log(errors)
 
 
   return (

@@ -7,7 +7,7 @@ const Footer = () => {
         <div className='w-full bg-[#393434] pb-20'>
             <div className='max-w-[1108px] mx-auto pt-4 flex justify-between gap-4'>
                 <div className='w-[286px]'>
-                    <img src={logo} alt="logo" width={286} />
+                    <img src={logo} alt="logo" width={186} />
                     <p className='mt-2 font-bold text-[18px] text-[#007BFF]'>
                         Biz bilan bog'lanish
                     </p>
@@ -22,7 +22,7 @@ const Footer = () => {
                     </p>
                 </div>
                 <div>
-                    <p className='mt-2 font-bold text-[18px] text-[#007BFF]'>
+                    <p className='mt-20 font-bold text-[18px] text-[#007BFF]'>
                         Sahifalar
                     </p>
                     <NavLink to="/" className='block mt-2.5 text-base text-white'>
@@ -42,7 +42,7 @@ const Footer = () => {
                     </NavLink>
                 </div>
                 <div>
-                    <p className='mt-2 font-bold text-[18px] text-[#007BFF]'>
+                    <p className='mt-20 font-bold text-[18px] text-[#007BFF]'>
                         Kategoriyalar
                     </p>
                     <p className='mt-5 text-base text-white'>
@@ -61,20 +61,7 @@ const Footer = () => {
                         Category 5
                     </p>
                 </div>
-                <div className='w-[356px]'>
-                    <p className='mt-2 font-bold text-[18px] text-[#007BFF]'>
-                        Axborot byulleteniga obuna
-                    </p>
-                    <p className='mt-5 text-base text-white'>
-                        Birinchi shaxs sifatida kiruvchi qutingizga eng soʻnggi mahsulotlar va eng yaxshi takliflarni oling
-                    </p>
-                    <div className='mt-[30px] pl-5 pr-1 w-[356px] h-[45px] rounded-[100px] bg-black flex justify-between items-center'>
-                        <input className='pr-5 w-full bg-inherit placeholder-white text-white outline-none' type="search" placeholder='Elektron pochtangiz' />
-                        <button className='w-[87px] h-[35px] rounded-[100px] bg-[#007BFF] text-white text-[14px]'>
-                            Jo'natish
-                        </button>
-                    </div>
-                </div>
+             
             </div>
         </div>
     )

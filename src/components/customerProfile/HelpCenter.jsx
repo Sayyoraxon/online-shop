@@ -28,7 +28,7 @@ const HelpCenter = () => {
           </div>
           
           
-          <div className='absolute w-full h-12 px-[23px] pb-1 left-0 bottom-0 bg-inherit'>
+          <div className='absolute w-full h-12 px-[23px] pb-1 left-0 lg:bottom-0 bottom-8 bg-inherit'>
             <div className='w-full h-full flex gap-2'>
               <input type="search" placeholder='Yozing...'
                 className='w-full h-full px-2 bg-white rounded-[9px] border border-[#6F6F6F]' />

@@ -76,10 +76,10 @@ const Home = ({ data }) => {
           </div>}
       </div>
 
-      <div className='h-screen min-w-[200px] overflow-hidden lg:block hidden'>
-        <div className='px-[27px] pb-20 bg-[#fbf9f8]'>
+      <div className='h-screen min-w-[280px] overflow-hidden lg:block hidden'>
+        <div className='px-[27px] h-[65vh] bg-[#fbf9f8]'>
           <NavLink to="/">
-            <img src={logo} alt="logo" width={280} />
+            <img src={logo} alt="logo" width={220} />
           </NavLink>
 
           <ul className='px-4 mt-[59px]'>
@@ -119,7 +119,7 @@ const Home = ({ data }) => {
             </li>
           </ul>
         </div>
-        <div className='bg-[#F9F2EF] h-full p-[30px]'>
+        <div className='bg-[#F9F2EF] h-[35vh] p-[30px]'>
           <p className='font-semibold text-[10px] leading-3'>
             PROFIL
           </p>

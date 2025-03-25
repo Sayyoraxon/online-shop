@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import buyze from "../../assets/icons/logo.png"
 import { FaStar } from 'react-icons/fa6'
-import chat from "../../assets/icons/shopping-cart.svg"
+import chat from "../../assets/icons/chat.svg"
 import AuthService from '../../service/Auth'
 import { useParams } from 'react-router'
 
@@ -12,6 +12,7 @@ const ProductDetail = () => {
   console.log(id)
 
   const [product, setProduct] = useState()
+  const [productImage, setProductImage] = useState()
 
 
   const getProduct = async () => {
@@ -19,6 +20,7 @@ const ProductDetail = () => {
       const res = await AuthService.getProduct(id)
       console.log(res)
       setProduct(res.data.results.product)
+      setProductImage(res.data.results.product.image_url_list[0])
     } catch (err) {
       console.log(err)
     }
@@ -30,6 +32,19 @@ const ProductDetail = () => {
     getProduct()
   }, [id])
 
+  const comment = async () => {
+
+    try {
+      const res = await AuthService.commentCreate({
+        text: "ajoyib, rahmat",
+        product: product.id
+      })
+      console.log(res)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
 
 
   return (
@@ -37,24 +52,18 @@ const ProductDetail = () => {
       <div className='flex gap-5 md:flex-nowrap flex-wrap'>
         <div>
           <div className='w-[450px] h-[450px] rounded-md bg-gray-200 flex justify-center items-center'>
-            <img src={buyze} alt="product" />
+            <img className='w-full h-full object-cover rounded-md'
+            src={productImage && `https://buyze.uz${productImage}`} alt="product" />
           </div>
           <div className='mt-5 flex justify-between'>
-            <div className='w-[74px] h-[74px] rounded-sm bg-gray-200 flex justify-center items-center'>
-              <img src={buyze} alt="product" width={60} />
-            </div>
-            <div className='w-[74px] h-[74px] rounded-sm bg-gray-200 flex justify-center items-center'>
-              <img src={buyze} alt="product" width={60} />
-            </div>
-            <div className='w-[74px] h-[74px] rounded-sm bg-gray-200 flex justify-center items-center'>
-              <img src={buyze} alt="product" width={60} />
-            </div>
-            <div className='w-[74px] h-[74px] rounded-sm bg-gray-200 flex justify-center items-center'>
-              <img src={buyze} alt="product" width={60} />
-            </div>
-            <div className='w-[74px] h-[74px] rounded-sm bg-gray-200 flex justify-center items-center'>
-              <img src={buyze} alt="product" width={60} />
-            </div>
+            {
+              product && product.image_url_list.map((image, i) => (
+                <div onClick={() => setProductImage(image)}
+                  key={i} className='w-[74px] h-[74px] rounded-sm bg-gray-200 flex justify-center items-center cursor-pointer'>
+                  <img src={`https://buyze.uz${image}`} alt="product" width={60} />
+                </div>
+              ))
+            }
           </div>
         </div>
         <div className='flex flex-col justify-between'>
@@ -93,14 +102,12 @@ const ProductDetail = () => {
             </p>
           </div>
           <div className='flex flex-wrap items-center gap-3'>
-            <button className='w-[356px] h-[74px] rounded-md bg-[#FFB644] flex justify-center items-center gap-[25px]'>
+            <button onClick={comment}
+            className='w-[356px] h-[74px] rounded-md bg-[#FFB644] flex justify-center items-center gap-[25px]'>
               <p className='font-medium text-[24px] text-white'>
-                Savatga qo'shish
+                Xabar yozish
               </p>
               <img src={chat} alt="chat" />
-            </button>
-            <button className='font-medium text-base text-[#007bff] hover:underline'>
-              Mahsulot haqida xabar berish
             </button>
           </div>
         </div>

@@ -15,7 +15,7 @@ const NewsSeccion = () => {
                     <p className='font-bold text-base'>
                         Filtr
                     </p>
-                    <button className='w-[60px] h-[25px] rounded-[5px] border border-[#007BFF]'>
+                    <button className='w-[110px] h-[25px] rounded-[5px] border border-[#007BFF]'>
                         Qayta tiklash
                     </button>
                 </div>

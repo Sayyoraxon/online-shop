@@ -5,7 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import AuthService from '../../service/Auth';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteFailure, signUserFailure, signUserStart } from '../../slice/auth';
+import { deleteFailure, signUserFailure, signUserStart, updadeUserSuccess } from '../../slice/auth';
 import { loggedIn } from '../../helpers/storage';
 import { useNavigate } from 'react-router';
 
@@ -45,9 +45,9 @@ const Profile = ({ setStep }) => {
                 zip_code: data.zipCode
             })
             console.log(res)
-            // dispatch(updateUserSuccess())
+            dispatch(updadeUserSuccess())
             setStep(5)
-            loggedIn(true)
+            //loggedIn(true)
         } catch (err) {
             console.log(err)
             dispatch(signUserFailure(err.response.data))
@@ -88,21 +88,23 @@ const Profile = ({ setStep }) => {
 
             </div>
             <div className='w-full'>
-                <input {...register('nickName')} type='text' placeholder={language.FullName}
+                <input {...register('nickName')} type='text' placeholder={language.NickName}
                     className='w-full h-[45px] rounded-[10px] bg-[#fff] backdrop-blur-[20px] border border-[#a1a1a1] px-3 outline-none' />
                 {errors.nickName && <p className='h-5 text-[12px] text-red-500 text-left'>{errors.nickName.message}</p>}
                 {error && <p className='h-5 text-[12px] text-red-500 text-left'>{error.nic_number}</p>}
             </div>
             <div className='w-full'>
-                <input {...register('mobileNumber')} type='text' placeholder="Telefon raqam"
-                    className='w-full h-[45px] rounded-[10px] bg-[#fff] backdrop-blur-[20px] border border-[#a1a1a1] px-3 outline-none' />
+                <input {...register('mobileNumber')} type="text" placeholder="Telefon raqam (+998XXXXXXXXX)"
+                    className='w-full h-[45px] rounded-[10px] bg-[#fff] backdrop-blur-[20px] border border-[#a1a1a1] px-3 outline-none' 
+                    maxLength={13} onInput={(e) => {
+                        e.target.value = e.target.value.replace(/[^0-9+]/g, ""); // faqat + va raqamlarni qoldiramiz
+                    }}/>
                 {errors.mobileNumber && <p className='h-5 text-[12px] text-red-500 text-left'>{errors.mobileNumber.message}</p>}
                 {error && <p className='h-5 text-[12px] text-red-500 text-left'>{error.mobile_number}</p>}
             </div>
             <div className='w-full flex justify-between gap-5'>
                 <div className='w-full'>
                     <input {...register('birthday')} type='date' placeholder={language.Birthday}
-                        onChange={(e) => console.log(typeof e.target.value)}
                         className='w-full h-[45px] rounded-[10px] bg-[#fff] backdrop-blur-[20px] border border-[#a1a1a1] px-3 outline-none' />
                     {errors.birthday && <p className='h-5 text-[12px] text-red-500 text-left'>{errors.birthday.message}</p>}
                     {error && <p className='h-5 text-[12px] text-red-500 text-left'>{error.birthday}</p>}

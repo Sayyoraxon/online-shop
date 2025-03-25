@@ -1,3 +1,4 @@
+import { useState } from "react"
 import brand from "../../assets/image/brand.png"
 import BestDeals from "./BestDeals"
 import ChooseByShops from "./ChooseByShops"
@@ -7,6 +8,8 @@ import MostPopular from "./MostPopular"
 import TopCategories from "./TopCategories"
 
 const CustomerMain = ({products}) => {
+
+    const [search, setSearch] = useState("")
 
   return (
     <div>
@@ -18,7 +21,8 @@ const CustomerMain = ({products}) => {
                 </p>
                 <div className="mt-[30px] pl-5 pr-[5px] w-[356px] h-[45px] rounded-[100px] bg-gray-400 flex justify-between items-center">
                     <input className="w-full bg-inherit placeholder-white text-white outline-none" 
-                    type="search" placeholder="Doʻkon yoki mahsulotni qidiring"/>
+                    type="search" placeholder="Doʻkon yoki mahsulotni qidiring"
+                    onChange={(e)=>setSearch(e.target.value)}/>
                     <button className="w-[97px] h-[35px] rounded-[100px] bg-[#007BFF] text-white text-[14px] leading-4">
                         Qidiring
                     </button>
@@ -26,7 +30,7 @@ const CustomerMain = ({products}) => {
             </div>
         </div>
         <TopCategories/>
-        <DepartmentStores products={products}/>
+        <DepartmentStores products={products} search={search}/>
         <ChooseByShops products={products}/>
         <MostPopular products={products}/>
         <BestDeals products={products}/>

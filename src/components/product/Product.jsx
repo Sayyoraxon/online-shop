@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { NavLink } from "react-router"
 import arr from "../../assets/icons/left.svg"
 import AddProduct from "./AddProduct"
 
@@ -9,7 +10,7 @@ const Product = ({ product }) => {
 
     return (
         <>
-            {addProduct && <AddProduct setAddProduct={setAddProduct} slug={product.slug}/>}
+            {addProduct && <AddProduct setAddProduct={setAddProduct} slug={product.slug} product={product}/>}
             <div key={product.slug} className=" relative px-5 mt-2.5 flex items-center h-[49px] rounded-[10px] border border-gray-400 shadow-md">
                 <p className="w-2/12 font-medium text-[14px] leading-[17px] text-gray-500">
                     {product.id}
@@ -42,9 +43,9 @@ const Product = ({ product }) => {
                             Tahrirlash
                         </button>
                         <br />
-                        <button className="mt-2 text-[14px] text-black">
+                        <NavLink to={`${product.slug}/comments`} className="mt-2 text-[14px] text-black">
                             Fikr mulohazalar
-                        </button>
+                        </NavLink>
                     </div>}
 
                 </div>

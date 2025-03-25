@@ -7,7 +7,7 @@ import { updateUserFailed, signUserStart, deleteFailure } from '../../slice/auth
 import { useNavigate } from 'react-router';
 import { loggedIn } from '../../helpers/storage';
 
-const ProfilePicture = ({setStep}) => {
+const ProfilePicture = () => {
 
     const [file, setFile] = useState(null);
 
@@ -63,7 +63,7 @@ const ProfilePicture = ({setStep}) => {
             </p>
             <button onClick={() => document.getElementById("fileInput").click()}
                 className='overflow-hidden w-[315px] h-[315px] rounded-full bg-white border-[2px] border-black border-dashed flex flex-col gap-4 justify-center items-center'>
-                <img src={upload} alt="upload" />
+                <img src={file ? URL.createObjectURL(file) : upload} alt="upload" />
               
                     <p className='text-[18px] leading-[21px] text-[#bfbfbf]'>
                         {language.UploadPicture}
@@ -76,7 +76,7 @@ const ProfilePicture = ({setStep}) => {
                 style={{ display: "none" }} // Ko'rinmas qilish
                 onChange={handleImageChange} // Fayl o'zgarganda chaqiriladi
             />
-            {error && <p className='h-5 text-[12px] text-red-500 text-left'>{error}</p>}
+            {error && <p className='h-5 text-[12px] text-red-500 text-left'>{error.detail ? error.detail : error}</p>}
 
             <button onClick={submit} disabled={isLoading} className='w-full h-[45px] rounded-[10px] bg-[#007bff] text-white font-semibold text-base leading-[19px]'>
                 {language.Submit}

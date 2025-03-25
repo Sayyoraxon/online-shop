@@ -15,14 +15,14 @@ const VerifationSuccess = ({ setStep }) => {
             </p>
             <img src={success} alt="email" width={101} height={101} />
 
-            <p className='font-medium text-[14px] leading-[17px] text-center'>
-                {language.VerifationFailedSubtitle}
-            </p>
+            {/* <p className='font-medium text-[14px] leading-[17px] text-center'>
+                {language.EmailVerifationsubtitle}
+            </p> */}
 
-            <button
+            {/* <button
                 className='w-full h-[45px] rounded-[10px] bg-[#007bff] text-white font-semibold text-base leading-[19px]'>
                 {language.GoToHome}
-            </button>
+            </button> */}
             <button onClick={() => setStep(4)}
                 className='w-full h-[35px] rounded-[10px] text-[#007bff] font-semibold text-base leading-[19px] flex gap-1 justify-center'>
 
