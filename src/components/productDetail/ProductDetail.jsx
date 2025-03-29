@@ -1,49 +1,11 @@
-import React, { useEffect, useState } from 'react'
+
 import buyze from "../../assets/icons/logo.png"
 import { FaStar } from 'react-icons/fa6'
 import chat from "../../assets/icons/chat.svg"
-import AuthService from '../../service/Auth'
-import { useParams } from 'react-router'
 
-const ProductDetail = () => {
-
-  const { id } = useParams()
-
-  console.log(id)
-
-  const [product, setProduct] = useState()
-  const [productImage, setProductImage] = useState()
+const ProductDetail = ({product, productImage, setProductImage, setCommentsOpen}) => {
 
 
-  const getProduct = async () => {
-    try {
-      const res = await AuthService.getProduct(id)
-      console.log(res)
-      setProduct(res.data.results.product)
-      setProductImage(res.data.results.product.image_url_list[0])
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
-  console.log(product)
-
-  useEffect(() => {
-    getProduct()
-  }, [id])
-
-  const comment = async () => {
-
-    try {
-      const res = await AuthService.commentCreate({
-        text: "ajoyib, rahmat",
-        product: product.id
-      })
-      console.log(res)
-    } catch (err) {
-      console.log(err)
-    }
-  }
 
 
 
@@ -102,10 +64,10 @@ const ProductDetail = () => {
             </p>
           </div>
           <div className='flex flex-wrap items-center gap-3'>
-            <button onClick={comment}
-            className='w-[356px] h-[74px] rounded-md bg-[#FFB644] flex justify-center items-center gap-[25px]'>
+            <button onClick={()=>setCommentsOpen(true)}
+             className='w-[356px] h-[74px] rounded-md bg-[#FFB644] flex justify-center items-center gap-[25px]'>
               <p className='font-medium text-[24px] text-white'>
-                Xabar yozish
+                Fikr-mulohazalar
               </p>
               <img src={chat} alt="chat" />
             </button>

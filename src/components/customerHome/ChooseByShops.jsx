@@ -1,7 +1,16 @@
 import React from 'react'
 import bug from '../../assets/image/shopping-bag.png'
 
-const ChooseByShops = () => {
+const ChooseByShops = ({products}) => {
+
+    const arr = products && products.map((element) => {
+        return element.shop
+    });
+
+    const uniqueArr = [...new Set(arr)];
+
+    
+
   return (
     <div className='w-full mt-[30px]'>
         <p className='font-medium text-[24px] leading-[29px]'>

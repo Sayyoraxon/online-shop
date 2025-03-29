@@ -53,11 +53,15 @@ export const authSlice = createSlice({
         },
         deleteFailure: (state) => {
             state.error = null
+        },
+        otherFunction: (state) => {
+            state.loggedIn = false
+            state.loggedIn = true
         }
     }
 })
 
 
-export const {signUserStart, signUserSuccess, signUserFailure, reisterUserStart, registerUserSuccess, registerUserFailure, logout, updadeUserSuccess, updateUserFailed, confirmEmail, deleteFailure} = authSlice.actions
+export const {signUserStart, signUserSuccess, signUserFailure, reisterUserStart, registerUserSuccess, registerUserFailure, logout, updadeUserSuccess, updateUserFailed, confirmEmail, deleteFailure, otherFunction} = authSlice.actions
 
 export default authSlice.reducer

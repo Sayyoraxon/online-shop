@@ -35,7 +35,7 @@ const NewsSeccion = () => {
                 <p className='mt-2 text-[12px]'>
                     Maksimal narx Rs. 30,000.00
                 </p>
-                <div className='mt-2.5 w-[148px] h-[25px] p-2 rounded-[5px] border border-[#007BFF] flex justify-between items-center'>
+                <div className='mt-2.5 w-[168px] h-[25px] p-2 rounded-[5px] border border-[#007BFF] flex justify-between items-center'>
                     <p className='text-[14px]'>
                         Pastdan yuqoriga
                     </p>

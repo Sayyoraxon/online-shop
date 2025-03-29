@@ -12,5 +12,6 @@ export const loggedIn = (boolean) => {
 }
 
 export const logOut = () => {
-    localStorage.clear()
+    localStorage.removeItem("loggedIn")
+    localStorage.removeItem("token")
 }
