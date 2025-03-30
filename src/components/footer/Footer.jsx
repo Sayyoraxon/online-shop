@@ -5,7 +5,7 @@ import logo from "../../assets/icons/logo.png"
 const Footer = () => {
     return (
         <div className='w-full bg-[#393434] pb-20'>
-            <div className='max-w-[1108px] mx-auto pt-4 flex justify-between gap-4'>
+            <div className='max-w-[1148px] px-5 mx-auto pt-4 flex flex-wrap justify-between gap-4'>
                 <div className='w-[286px]'>
                     <img src={logo} alt="logo" width={186} />
                     <p className='mt-2 font-bold text-[18px] text-[#007BFF]'>

@@ -27,6 +27,7 @@ export const authSlice = createSlice({
         },
         confirmEmail: (state) => {
             state.error = null
+            state.isLoading = false
         },
         reisterUserStart: (state) => {
             state.isLoading = true

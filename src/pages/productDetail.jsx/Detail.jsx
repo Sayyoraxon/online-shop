@@ -38,7 +38,7 @@ const Detail = () => {
     return (
         <div className='w-full'>
             {commentsOpen && <Comments comments={comments} product={product} setCommentsOpen={setCommentsOpen}/>}
-            <div className='w-full mt-2.5 h-[45px] flex justify-between items-center'>
+            <div className='w-full mt-2.5 h-[45px] flex flex-wrap justify-between items-center'>
                 <div className='relative flex items-center gap-5'>
                     <button onClick={() => setCategories(!categories)}>
                         <FaBars style={{ fontSize: "30px" }} />
@@ -74,7 +74,7 @@ const Detail = () => {
                             </button>
                             <br />
                             <button className="px-2 py-1 hover:bg-slate-200 rounded-md">
-                                Uy-ro'rg'or buyumlari
+                                Uy-ro'zg'or buyumlari
                             </button>
                             <br />
                             <button className="px-2 py-1 hover:bg-slate-200 rounded-md">

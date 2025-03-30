@@ -4,7 +4,7 @@ import succes from "../../assets/icons/success.svg"
 import verifyStore from '../../store/verifyStore'
 import useStore from '../../store/useStore'
 
-const VerifyDialog = () => {
+const VerifyDialog = ({setForgetPassword}) => {
 
     const { success, close } = verifyStore()
     const { language } = useStore()
@@ -21,7 +21,8 @@ const VerifyDialog = () => {
                     {language.PasswordChanged}
                 </p>
                 <img src={succes} alt="fail" width={101} height={101}/>
-                <button className='w-full h-[45px] bg-[#007bff] rounded-[10px] text-white font-semibold text-base leading-[19px]'>
+                <button onClick={()=>setForgetPassword(false)} 
+                className='w-full h-[45px] bg-[#007bff] rounded-[10px] text-white font-semibold text-base leading-[19px]'>
                     {language.SinginTitle}
                 </button>
             </div>

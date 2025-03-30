@@ -45,7 +45,6 @@ const AddPhoto = ({ productSlug, setAddProduct }) => {
             const res = await AuthService.productImageCreate(formData);
             console.log("✅ Yuklash muvaffaqiyatli:", res);
             dispatch(addProductSuccess());
-            setAddProduct(false);
         } catch (err) {
             console.error("Yuklashda xatolik:", err?.response?.data || err);
             dispatch(createShopFailure(err.response?.data || "Server xatosi"));

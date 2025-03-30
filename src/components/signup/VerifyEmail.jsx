@@ -31,9 +31,23 @@ const VerifyEmail = ({ email, setStep }) => {
 
     setTimeout(() => {
       dispatch(deleteFailure());
-    }, 3000);
-
+    }, 2000);
   }
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            verify();
+        }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+        window.removeEventListener("keydown", handleKeyDown);
+    };
+}, []);
 
   const getNewCode = async () => {
     try {

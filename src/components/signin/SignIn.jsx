@@ -8,6 +8,7 @@ import { deleteFailure, signUserFailure, signUserStart, signUserSuccess } from '
 
 import AuthService from '../../service/Auth';
 import { loggedIn, setItem } from '../../helpers/storage';
+import { useEffect } from 'react';
 
 
 const SignIn = ({setForgetPassword}) => {
@@ -48,8 +49,23 @@ const SignIn = ({setForgetPassword}) => {
 
         setTimeout(() => {
             dispatch(deleteFailure());
-        }, 3000);
+        }, 2000);
     };
+
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                handleSubmit(onSubmit)();
+            }
+        };
+    
+        window.addEventListener("keydown", handleKeyDown);
+    
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, []);
 
     
 

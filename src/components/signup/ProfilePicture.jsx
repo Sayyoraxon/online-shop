@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import useStore from '../../store/useStore'
 import upload from "../../assets/image/upload.png"
 import AuthService from '../../service/Auth';
@@ -49,10 +49,13 @@ const ProfilePicture = () => {
 
         setTimeout(() => {
             dispatch(deleteFailure());
-        }, 3000);
+        }, 2000);
     };
 
-    console.log(file)
+   
+        window.addEventListener("keydown", submit);
+    
+ 
 
 
     return (

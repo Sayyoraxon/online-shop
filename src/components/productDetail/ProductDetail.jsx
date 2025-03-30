@@ -13,7 +13,7 @@ const ProductDetail = ({product, productImage, setProductImage, setCommentsOpen}
     <div className='mt-[35px] w-full pb-[50px]'>
       <div className='flex gap-5 md:flex-nowrap flex-wrap'>
         <div>
-          <div className='w-[450px] h-[450px] rounded-md bg-gray-200 flex justify-center items-center'>
+          <div className='w-[450px] h-[450px] rounded-md bg-gray-200 flex justify-center items-center shadow-md shadow-gray-400'>
             <img className='w-full h-full object-cover rounded-md'
             src={productImage && `https://buyze.uz${productImage}`} alt="product" />
           </div>
@@ -140,7 +140,7 @@ const ProductDetail = ({product, productImage, setProductImage, setCommentsOpen}
       </div>
 
       <div>
-        <p className='font-medium text-[24px] leading-[29px]'>
+        <p className='font-medium text-[24px] leading-[29px] shadow-md'>
           Savdo mahsulotlari
         </p>
         <div className='mt-[30px] flex flex-wrap gap-5'>

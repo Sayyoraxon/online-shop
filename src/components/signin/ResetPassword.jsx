@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import useStore from '../../store/useStore';
 import { useLoginSchema } from '../../lib/Validation';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -46,7 +46,20 @@ const ResetPassword = ({ email }) => {
         }
     };
 
-    console.log(email)
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                handleSubmit(onSubmit)();
+            }
+        };
+    
+        window.addEventListener("keydown", handleKeyDown);
+    
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, []);
 
 
 

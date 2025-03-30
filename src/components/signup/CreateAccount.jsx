@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import useStore from '../../store/useStore'
 import { useLoginSchema } from '../../lib/Validation'
 import { useForm } from 'react-hook-form'
@@ -51,7 +51,7 @@ const CreateAccount = ({ setStep, setEmail }) => {
     }
     setTimeout(() => {
       dispatch(deleteFailure());
-  }, 3000);
+  }, 2000);
   };
 
   const handleClick = (e) => {
@@ -67,7 +67,20 @@ const CreateAccount = ({ setStep, setEmail }) => {
     setAccounttype(e.name)
   }
 
- console.log(errors)
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            handleSubmit(onSubmit)();
+        }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+        window.removeEventListener("keydown", handleKeyDown);
+    };
+}, []);
 
 
   return (

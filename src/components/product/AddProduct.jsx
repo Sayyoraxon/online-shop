@@ -4,7 +4,7 @@ import AddPhoto from "./AddPhoto"
 import AddVideo from "./AddVideo"
 import useStore from "../../store/useStore"
 import { useLoginSchema } from '../../lib/Validation';
-import { IoIosArrowDown } from "react-icons/io"
+import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io"
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import AuthService from "../../service/Auth"
@@ -163,39 +163,113 @@ const AddProduct = ({ setAddProduct, slug }) => {
                             </div>
                         </div>
                         <div className='mt-4 flex sm:flex-nowrap flex-wrap gap-5'>
-                            <div className='w-full relative h-[45px] rounded-[10px] border border-[#a1a1a1] px-4 flex justify-between items-center'>
+                            <div onClick={() => setOpen(!open)} className='w-full relative h-[45px] rounded-[10px] border border-[#a1a1a1] px-4 flex justify-between items-center'>
                                 <p className={`${categoryname === "" ? "text-[#BEBEBE]" : "text-black"}`}>
                                     {categoryname === "" ?
                                         language.ProductCategory :
                                         categoryname}
                                 </p>
-                                <button onClick={() => setOpen(!open)}>
-                                    <IoIosArrowDown style={{ color: "#bebebe" }} />
+                                <button>
+                                    {open ? <IoIosArrowDown style={{ color: "#bebebe" }} /> :
+                                        <IoIosArrowForward style={{ color: "#bebebe" }} />}
                                 </button>
                                 {open &&
-                                    <div className="absolute left-0 top-[44px] px-5 py-3 rounded-md shadow-md shadow-gray-400 bg-white flex flex-col gap-1">
-                                        <button onClick={() => {
-                                            setOpen(false)
-                                            setSubcategory(1)
-                                            setCategoryName("Maishiy texnika")
-                                        }} className="text-left">
-                                            Maishiy texnika
+                                    <div className="absolute w-full top-11 left-0 px-5 py-3 rounded-md shadow shadow-gray-400 bg-white h-[200px] overflow-scroll">
+                                        <button onClick={()=>{
+                                            setSubcategory(6)
+                                            setCategoryName("Avtotovarlar")
+                                        }} className="px-2 py-1 hover:bg-slate-200 rounded-md">
+                                            Avtotovarlar
                                         </button>
-                                        <button onClick={() => {
-                                            setOpen(false)
-                                            setSubcategory(2)
+                                        <br />
+                                        <button onClick={()=>{
+                                            setSubcategory(7)
+                                            setCategoryName("Bolalar tovarlari")
+                                        }} className="px-2 py-1 hover:bg-slate-200 rounded-md">
+                                            Bolalar tovarlari
+                                        </button>
+                                        <br />
+                                        <button onClick={()=>{
+                                            setSubcategory(8)
+                                            setCategoryName("Go'zallik va parvarish")
+                                        }}  className="px-2 py-1 hover:bg-slate-200 rounded-md">
+                                            Go'zallik va parvarish
+                                        </button>
+                                        <br />
+                                        <button onClick={()=>{
+                                            setSubcategory(9)
                                             setCategoryName("Elektronika")
-                                        }} className="text-left">
+                                        }} className="px-2 py-1 hover:bg-slate-200 rounded-md">
                                             Elektronika
                                         </button>
-                                        <button onClick={() => {
-                                            setOpen(false)
-                                            setSubcategory(3)
+                                        <br />
+                                        <button onClick={()=>{
+                                            setSubcategory(10)
                                             setCategoryName("Kiyim")
-                                        }} className="text-left">
+                                        }} className="px-2 py-1 hover:bg-slate-200 rounded-md">
                                             Kiyim
                                         </button>
-                                    </div>}
+                                        <br />
+                                        <button onClick={()=>{
+                                            setSubcategory(6)
+                                            setCategoryName("Maishiy texnika")
+                                        }} className="px-2 py-1 hover:bg-slate-200 rounded-md">
+                                            Maishiy texnika
+                                        </button>
+                                        <br />
+                                        <button onClick={()=>{
+                                            setSubcategory(11)
+                                            setCategoryName("Oziq-ovqat mahsulotlari")
+                                        }} className="px-2 py-1 hover:bg-slate-200 rounded-md">
+                                            Oziq-ovqat mahsulotlari
+                                        </button>
+                                        <br />
+                                        <button onClick={()=>{
+                                            setSubcategory(12)
+                                            setCategoryName("Poyabzallar")
+                                        }} className="px-2 py-1 hover:bg-slate-200 rounded-md">
+                                            Poyabzallar
+                                        </button>
+                                        <br />
+                                        <button onClick={()=>{
+                                            setSubcategory(13)
+                                            setCategoryName("Qurilish va ta'mirlash")
+                                        }} className="px-2 py-1 hover:bg-slate-200 rounded-md">
+                                            Qurilish va ta'mirlash
+                                        </button>
+                                        <br />
+                                        <button onClick={()=>{
+                                            setSubcategory(14)
+                                            setCategoryName("Salomatlik")
+                                        }} className="px-2 py-1 hover:bg-slate-200 rounded-md">
+                                            Salomatlik
+                                        </button>
+                                        <br />
+                                        <button onClick={()=>{
+                                            setSubcategory(15)
+                                            setCategoryName("Sport va hordiq")
+                                        }} className="px-2 py-1 hover:bg-slate-200 rounded-md">
+                                            Sport va hordiq
+                                        </button>
+                                        <br />
+                                        <button onClick={()=>{
+                                            setSubcategory(16)
+                                            setCategoryName("Uy-ro'zg'or buyumlari")
+                                        }} className="px-2 py-1 hover:bg-slate-200 rounded-md">
+                                            Uy-ro'zg'or buyumlari
+                                        </button>
+                                        <br />
+                                        <button onClick={()=>{
+                                            setSubcategory(17)
+                                            setCategoryName("Xobbi va ijod")
+                                        }} className="px-2 py-1 hover:bg-slate-200 rounded-md">
+                                            Xobbi va ijod
+                                        </button>
+                                        <br />
+                                    </div>
+
+
+                                }
 
                             </div>
                             <div className="w-full">
@@ -221,7 +295,7 @@ const AddProduct = ({ setAddProduct, slug }) => {
                                     language.Publish}
                             </button>
                             <button onClick={() => setAddProduct(false)}
-                             className='w-[262px] h-[45px] rounded-[10px] border border-[#007bff] text-[#007bff] bg-white font-bold text-base leading-[19px]'>
+                                className='w-[262px] h-[45px] rounded-[10px] border border-[#007bff] text-[#007bff] bg-white font-bold text-base leading-[19px]'>
                                 {language.Cancel}
                             </button>
                         </div>

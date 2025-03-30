@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import emaill from "../../assets/image/tellEmail.png"
 import useStore from '../../store/useStore';
 import { useLoginSchema } from '../../lib/Validation';
@@ -40,6 +40,21 @@ const ForgetPasswordS1 = ({ setStep, email, setEmail }) => {
         }
         console.log('Form ma’lumotlari:', data);
     };
+
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                handleSubmit(onSubmit)();
+            }
+        };
+    
+        window.addEventListener("keydown", handleKeyDown);
+    
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, []);
 
     return (
 
