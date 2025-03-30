@@ -13,7 +13,7 @@ const AccountSettings = ({setAccount}) => {
     const [deleteAccount, setDeleteAccount] = useState(false)
 
     return (
-        <div className='fixed h-screen w-full top-0 left-0 backdrop-blur-md flex justify-center items-center'>
+        <div className='fixed min-h-screen w-full top-0 left-0 backdrop-blur-md flex justify-center items-center px-5'>
             {mainWindow &&
                 <div className='relative w-[644px] h-[353px] pt-10 px-[50px] rounded-[15px] shadow-md shadow-gray-400 bg-white'>
                     <button onClick={()=>setAccount(false)}

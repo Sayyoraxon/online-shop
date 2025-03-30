@@ -93,8 +93,8 @@ function App() {
           :
           <Route path="/" element={<CustomerHome />}>
             <Route index element={<CustomerMain products={allProducts}/>} />
-            <Route path="shop" element={<ShopOnline/>}/>
-            <Route path="news" element={<News/>}/>
+            <Route path="shop" element={<ShopOnline products={allProducts}/>}/>
+            <Route path="news" element={<News products={allProducts}/>}/>
             <Route path="about" element={<About/>}/>
             <Route path="product/:id" element={<Detail/>}/>
             <Route path="wishes" element={<Whishes/>}/>

@@ -15,11 +15,11 @@ const CustomerMain = ({ products }) => {
         <div>
             <div className="relative w-full h-[450px]">
                 <img className="w-full h-full object-cover" src={brand} alt="brand" />
-                <div className="left-[94px] top-[143px] absolute w-[388px] h-[163px]">
+                <div className="sm:left-[94px] left-0 top-[143px] absolute sm:w-[378px] w-full h-[163px]">
                     <p className="text-[36px] leading-[43px]">
                         <span className="text-[#007BFF]">Ishonchliligi </span> bilan eng yaxshi mahsulotlarni toping
                     </p>
-                    <div className="mt-[30px] pl-5 pr-[5px] w-[356px] h-[45px] rounded-[100px] bg-gray-400 flex justify-between items-center">
+                    <div className="mt-[30px] pl-5 pr-[5px] sm:w-[356px] w-full h-[45px] rounded-[100px] bg-gray-400 flex justify-between items-center">
                         <input className="w-full bg-inherit placeholder-white text-white outline-none"
                             type="search" placeholder="Doʻkon yoki mahsulotni qidiring"
                             onChange={(e) => setSearch(e.target.value)} />

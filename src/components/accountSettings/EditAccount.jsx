@@ -54,7 +54,7 @@ const EditAccount = ({ setEditAccount, setMainWindow }) => {
     };
 
     return (
-        <div className='relative w-[644px] h-[690px] py-10 px-[50px] rounded-[15px] shadow-md shadow-gray-400 bg-white flex flex-col items-center justify-around'>
+        <div className='relative w-[644px] h-[690px] py-10 px-[50px] rounded-[15px] shadow-md shadow-gray-400 bg-white flex flex-col items-center justify-around overflow-scroll'>
             <button onClick={() => {
                 setEditAccount(false)
                 setMainWindow(true)
@@ -68,7 +68,7 @@ const EditAccount = ({ setEditAccount, setMainWindow }) => {
                 {language.YourInformations}
             </p>
             {error && <p className='h-5 text-[12px] text-red-500 text-left'>{error[0]}</p>}
-            <div className='w-full flex justify-between gap-5'>
+            <div className='w-full flex flex-wrap gap-y-4 justify-between gap-5'>
                 <div className='w-full'>
                     <input {...register('firstName')} type='text' placeholder={language.FirstName}
                         className='w-full h-[45px] rounded-[10px] bg-[#fff] backdrop-blur-[20px] border border-[#a1a1a1] px-3 outline-none' />
@@ -98,7 +98,7 @@ const EditAccount = ({ setEditAccount, setMainWindow }) => {
                 {errors.mobileNumber && <p className='h-5 text-[12px] text-red-500 text-left'>{errors.mobileNumber.message}</p>}
                 {error && <p className='h-5 text-[12px] text-red-500 text-left'>{error.mobile_number}</p>}
             </div>
-            <div className='w-full flex justify-between gap-5'>
+            <div className='w-full flex flex-wrap gap-y-4 justify-between gap-5'>
                 <div className='w-full'>
                     <input {...register('birthday')} type='date' placeholder={language.Birthday}
                         onChange={(e) => console.log(typeof e.target.value)}
@@ -127,7 +127,7 @@ const EditAccount = ({ setEditAccount, setMainWindow }) => {
                     className='w-full h-[45px] rounded-[10px] bg-[#fff] backdrop-blur-[20px] border border-[#a1a1a1] px-3 outline-none' />
                 {errors.streed && <p className='h-5 text-[12px] text-red-500 text-left'>{errors.streed.message}</p>}
             </div>
-            <div className='w-full flex justify-between gap-5'>
+            <div className='w-full flex flex-wrap gap-y-4 justify-between gap-5'>
                 <div className='w-full'>
                     <input  {...register('city')} type='text' placeholder={language.City}
                         className='w-full h-[45px] rounded-[10px] bg-[#fff] backdrop-blur-[20px] border border-[#a1a1a1] px-3 outline-none' />
