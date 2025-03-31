@@ -5,7 +5,7 @@ const About = () => {
     return (
         <div className='pb-[50px]'>
             <p className='mt-20 font-medium text-[80px] text-center'>
-                About Us
+                Biz haqimizda
             </p>
             <p className='mt-5 text-base mb-[80px] text-center'>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry
@@ -14,10 +14,10 @@ const About = () => {
             <div className='py-[50px] px-6 maz-w-[1108px] rounded-[30px] shadow-md shadow-gray-400'>
                 <div className='flex justify-between'>
                     <p className='font-semibold text-[36px]'>
-                        We Makes Online Shopping Easier For You
+                        Biz siz uchun onlayn xarid qilishni osonlashtiramiz
                     </p>
                     <p className='w-[225px] font-light text-[10px]'>
-                        Learn More About The Company ,The Team Behind It & How We Think
+                        Kompaniya, uning orqasidagi jamoa va biz qanday fikrlashimiz haqida ko'proq bilib oling
                     </p>
                 </div>
                 <div className='mt-[66px] px-5 flex flex-wrap gap-y-4 justify-between'>
@@ -26,11 +26,10 @@ const About = () => {
                             200+
                         </p>
                         <p className='font-semibold text-[20px] mt-[5px]'>
-                            Orders completed
+                            OBajarilgan buyurtmalar
                         </p>
                         <p className='mt-[9px] font-light text-[10px]'>
-                            Learn More About The Company ,The
-                            Team Behind It & How We Think
+                            Kompaniya, uning orqasidagi jamoa va biz qanday fikrlashimiz haqida ko'proq bilib oling
                         </p>
                     </div>
                     <div className='w-[180px] text-center'>
@@ -38,11 +37,10 @@ const About = () => {
                             400%
                         </p>
                         <p className='font-semibold text-[20px] mt-[5px]'>
-                            Successful Orders
+                            Muvaffaqiyatli buyurtmalar
                         </p>
                         <p className='mt-[9px] font-light text-[10px]'>
-                            Learn More About The Company ,The
-                            Team Behind It & How We Think
+                            Kompaniya, uning orqasidagi jamoa va biz qanday fikrlashimiz haqida ko'proq bilib oling
                         </p>
                     </div>
                     <div className='w-[180px] text-center'>
@@ -50,11 +48,10 @@ const About = () => {
                             8k
                         </p>
                         <p className='font-semibold text-[20px] mt-[5px]'>
-                            User Accounts
+                            Foydalanuvchi hisoblari
                         </p>
                         <p className='mt-[9px] font-light text-[10px]'>
-                            Learn More About The Company ,The
-                            Team Behind It & How We Think
+                            Kompaniya, uning orqasidagi jamoa va biz qanday fikrlashimiz haqida ko'proq bilib oling
                         </p>
                     </div>
                     <div className='w-[180px] text-center'>
@@ -62,11 +59,10 @@ const About = () => {
                             100+
                         </p>
                         <p className='font-semibold text-[20px] mt-[5px]'>
-                            5 Stars Reviews
+                            5 yulduzli sharhlar
                         </p>
                         <p className='mt-[9px] font-light text-[10px]'>
-                            Learn More About The Company ,The
-                            Team Behind It & How We Think
+                            Kompaniya, uning orqasidagi jamoa va biz qanday fikrlashimiz haqida ko'proq bilib oling
                         </p>
                     </div>
                 </div>
@@ -75,25 +71,25 @@ const About = () => {
             <div className='mt-10 flex justify-between gap-[22px] sm:flex-nowrap flex-wrap'>
                 <div className='py-10 px-[80px] text-center rounded-[30px] shadow-md shadow-gray-400'>
                     <p className='font-medium text-[32px]'>
-                        Our Mission
+                        Bizning missiyamiz
                     </p>
                     <p className='mt-[30px] font-light text-base'>
-                        Our mission to create a good market place for local sellers & to create a good online shopping store
+                        Bizning vazifamiz mahalliy sotuvchilar uchun yaxshi bozor maydoni yaratish va yaxshi onlayn xarid qilish do'konini yaratish
                     </p>
                 </div>
                 <div className='py-10 px-[80px] text-center rounded-[30px] shadow-md shadow-gray-400'>
                     <p className='font-medium text-[32px]'>
-                        Our Vision
+                        Bizning maqsadimiz
                     </p>
                     <p className='mt-[30px] font-light text-base'>
-                        Our vision is to build a trustable online store for both customers and sellers
+                        Bizning maqsadimiz mijozlar va sotuvchilar uchun ishonchli onlayn-do'kon yaratishdir
                     </p>
                 </div>
             </div>
 
             <div className='mt-10 max-w-[1108px] py-10 px-[80px] rounded-[30px] shadow-md shadow-gray-400 text-center'>
                 <p className='font-semibold text-[36px]'>
-                    We are the best local online shopping store
+                    Biz eng yaxshi mahalliy onlayn do'konmiz
                 </p>
                 <p className='mt-5 text-base'>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
@@ -112,7 +108,7 @@ const About = () => {
                 Amishka Amarasignhe
                 </p>
                 <p className='mt-2 font-semibold text-base text-[#007BFF]'>
-                    Customer
+                    Mijoz
                 </p>
             </div>
         </div>

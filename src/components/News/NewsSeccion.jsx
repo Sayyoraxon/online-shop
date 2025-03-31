@@ -48,15 +48,15 @@ const NewsSeccion = ({products, search}) => {
         setCategory(e.value)
     }
 
-    console.log(category)
+    console.log(products)
 
     const maxPrice = price ? parseInt(price) : Infinity;
 
 
     return (
-        <div className='mt-[30px] w-full flex flex-wrap gap-5'>
+        <div className='mt-[30px] w-full flex sm:flex-nowrap flex-wrap gap-5'>
             <div className='p-5 w-[262px] h-full rounded-[15px] shadow-md shadow-gray'>
-                <div className=' flex justify-between items-center'>
+                <div className='flex justify-between items-center'>
                     <p className='font-bold text-base'>
                         Filtr
                     </p>

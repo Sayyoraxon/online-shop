@@ -19,7 +19,7 @@ const CustomerHome = () => {
     return (
         <div className='w-full'>
             <div className='max-w-[1148px] mx-auto px-5'>
-                <div className='w-full flex justify-between items-center mb-[27px]'>
+                <div className='w-full flex justify-between items-center mb-[27px] md:relative fixed top-0 left-0 bg-white z-30'>
                     <NavLink to="/">
                         <img src={logo} alt="logo" width={120} />
                     </NavLink>
@@ -44,11 +44,11 @@ const CustomerHome = () => {
                                         Yangiliklar
                                     </NavLink>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <NavLink to="/contact">
                                         Kontakt
                                     </NavLink>
-                                </li>
+                                </li> */}
                                 <li className="my-4">
                                     <NavLink to="/about">
                                         Biz haqimizda
@@ -67,9 +67,9 @@ const CustomerHome = () => {
                         <NavLink to="/news" className="font-medium text-[14px] leading-4 ">
                             Yangiliklar
                         </NavLink>
-                        <NavLink to="/contact" className="font-medium text-[14px] leading-4 ">
+                        {/* <NavLink to="/contact" className="font-medium text-[14px] leading-4 ">
                             Kontakt
-                        </NavLink>
+                        </NavLink> */}
                         <NavLink to="/about" className="font-medium text-[14px] leading-4">
                             Biz haqimizda
                         </NavLink>
@@ -88,9 +88,9 @@ const CustomerHome = () => {
                             <NavLink to="/profile">
                                 <FaUser style={{ fontSize: "25px", color: "#007bff" }} />
                             </NavLink>
-                            <NavLink to="cart">
+                            {/* <NavLink to="cart">
                                 <img src={bucket} alt="bucket" />
-                            </NavLink>
+                            </NavLink> */}
                         </div>
                         :
                         <div className='flex gap-10'>
@@ -102,7 +102,10 @@ const CustomerHome = () => {
                             </NavLink>
                         </div>}
                 </div>
+                <div className="md:mt-0 mt-36">
                 <Outlet />
+                </div>
+                
             </div>
             <Footer />
         </div>

@@ -15,7 +15,7 @@ const Product = ({ product }) => {
                 <p className="w-2/12 font-medium text-[14px] leading-[17px] text-gray-500">
                     {product.id}
                 </p>
-                <p className="w-2/12 font-medium text-[14px] leading-[17px] text-gray-500">
+                <p className="w-3/12 font-medium text-[14px] leading-[17px] text-gray-500">
                     {product.name}
                 </p>
                 <p className="w-2/12 font-medium text-[14px] leading-[17px] text-gray-500">
@@ -24,13 +24,10 @@ const Product = ({ product }) => {
                 <p className="w-2/12 text-[14px] leading-[17px] text-gray-500">
                     {product.quantity}
                 </p>
-                <p className="w-2/12 text-[14px] leading-[17px] text-gray-500">
+                <p className="w-3/12 text-[14px] leading-[17px] text-gray-500">
                     {product.price}
                 </p>
-                <div className="w-2/12 font-medium text-[14px] leading-[17px] text-gray-500 flex justify-between items-center">
-                    <div className="w-[94px] h-[29px] rounded-md border border-[#28D764] text-[#28D764] flex justify-center items-center">
-                        Live
-                    </div>
+                <div className="w-0/12 font-medium text-[14px] leading-[17px] text-gray-500 flex justify-between items-center">
                     <button onClick={() => setOpen(!open)}>
                         <img src={arr} alt="left" />
                     </button>

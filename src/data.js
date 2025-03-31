@@ -76,7 +76,7 @@ export const uzbek = {
     SearchProduct: "Mahsulotni qidirish",
     FilterByCategory: "Turkum boʻyicha filtrlash",
     AddNewProduct: "Yangi mahsulot qo'shing",
-    ProductId: "Mahsulot identifikatori",
+    ProductId: "Mahsulot ID",
     ProductName: "Mahsulot nomi",
     Category: "Turkum",
     Quantity: "Miqdori",

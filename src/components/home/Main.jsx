@@ -21,7 +21,7 @@ const Main = ({products}) => {
             <p className='font-medium text-[24px] leading-[29px]'>
                 {language.Dashboard}
             </p>
-            <div className='mt-[51px] w-full flex gap-6'>
+            <div className='mt-[51px] w-full flex md:flex-nowrap flex-wrap gap-6'>
                 <div>
                     <div className='flex flex-wrap gap-6'>
                         <div className='flex justify-between items-center px-5 py-4 w-[300px] h-[100px] rounded-[9px] shadow-md shadow-gray-400 grow'>
@@ -38,7 +38,7 @@ const Main = ({products}) => {
                         <div className='flex justify-between items-center px-5 py-4 w-[300px] h-[100px] rounded-[9px] shadow-md shadow-gray-400 grow'>
                             <div>
                                 <p className='font-medium text-[36px] leading-[46px] text-[#007bff]'>
-                                    1200
+                                    0
                                 </p>
                                 <p className='font-medium text-[14px] leading-4 text-[#007bff]'>
                                     {language.TotalSales}
@@ -49,7 +49,7 @@ const Main = ({products}) => {
                         <div className='flex justify-between items-center px-5 py-4 w-[300px] h-[100px] rounded-[9px] shadow-md shadow-gray-400 grow'>
                             <div>
                                 <p className='font-medium text-[36px] leading-[46px] text-[#007bff]'>
-                                    240
+                                    0
                                 </p>
                                 <p className='font-medium text-[14px] leading-4 text-[#007bff]'>
                                     {language.PendingOrders}
@@ -60,7 +60,7 @@ const Main = ({products}) => {
                         <div className='flex justify-between items-center px-5 py-4 w-[300px] h-[100px] rounded-[9px] shadow-md shadow-gray-400 grow'>
                             <div>
                                 <p className='font-medium text-[36px] leading-[46px] text-[#007bff]'>
-                                    240
+                                    0
                                 </p>
                                 <p className='font-medium text-[14px] leading-4 text-[#007bff]'>
                                     {language.OnProccessToDelivery}

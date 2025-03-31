@@ -32,7 +32,7 @@ const Home = ({ data }) => {
     <div className='w-full flex'>
       {logoutWindow && <Logout setLogoutWindow={setLogoutWindow} />}
 
-      <div className="absolute px-6 top-0 w-full h-14 lg:hidden border-b flex justify-between items-center gap-5">
+      <div className="absolute px-6 top-0 w-full h-14 lg:hidden border-b flex justify-between items-center gap-5 bg-white">
         <NavLink to="/">
           <img src={logo} alt="logo" width={70} />
         </NavLink>

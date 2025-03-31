@@ -29,7 +29,7 @@ const DeleteAccount = ({ setDeleteAccount, setMainWindow }) => {
     }
 
     return (
-        <div className='relative w-[644px] h-[256px] pt-10 px-[50px] rounded-[15px] shadow-md shadow-gray-400 bg-white'>
+        <div className='relative w-[644px] h-auto py-10 px-[50px] rounded-[15px] shadow-md shadow-gray-400 bg-white'>
             <button onClick={() => {
                 setDeleteAccount(false)
                 setMainWindow(true)

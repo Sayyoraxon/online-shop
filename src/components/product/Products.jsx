@@ -2,7 +2,7 @@
 import useStore from "../../store/useStore"
 import Product from "./Product"
 
-const Products = ({ products, search }) => {
+const Products = ({ products, search, subcategory }) => {
 
   const { language } = useStore()
 
@@ -12,7 +12,7 @@ const Products = ({ products, search }) => {
         <p className="w-2/12 font-medium text-[14px] leading-[17px] text-gray-500">
           {language.ProductId}
         </p>
-        <p className="w-2/12 font-medium text-[14px] leading-[17px] text-gray-500">
+        <p className="w-3/12 font-medium text-[14px] leading-[17px] text-gray-500">
           {language.ProductName}
         </p>
         <p className="w-2/12 font-medium text-[14px] leading-[17px] text-gray-500">
@@ -24,13 +24,13 @@ const Products = ({ products, search }) => {
         <p className="w-2/12 font-medium text-[14px] leading-[17px] text-gray-500">
           {language.PerPrice}
         </p>
-        <p className="w-2/12 font-medium text-[14px] leading-[17px] text-gray-500">
-          {language.Status}
-        </p>
       </div>
 
       {search === ""
         ? products && products.map((product) => (
+          subcategory === null ?
+          <Product key={product.id} product={product} /> :
+          product.sub_category === subcategory &&
           <Product key={product.id} product={product} />
         ))
         : products
